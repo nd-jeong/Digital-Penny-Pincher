@@ -53,7 +53,7 @@ Define the the React components and the architectural design of your app.
 
 ## ERD
 
-Create the ERD model for your project
+https://www.lucidchart.com/invitations/accept/81714e62-86e8-44c1-b460-671404b0d2fd
 
 ## Functional Components
 
