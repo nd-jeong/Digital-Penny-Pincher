@@ -11,11 +11,11 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Day 1| Project Proposal / Project Start | Incomplete
-|Day 2| Database / React Components /  | Incomplete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| Pseudocode / actual code | Incomplete
-|Day 5| Initial Clickable Model  | Incomplete
-|Day 6| MVP | Incomplete
+|Day 2| Database / React Components | Incomplete
+|Day 3| Database / React Components | Incomplete
+|Day 4| Initial Clickable Model | Incomplete
+|Day 5| MVP  | Incomplete
+|Day 6| Post-MVP | Incomplete
 |Day 7| Present | Incomplete
 
 
@@ -25,7 +25,7 @@ Use this section to describe your final project and perhaps any links to relevan
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+https://ga-students.slack.com/files/UHJMTP4EM/FKMBF71HT/wire_frame_for_projet_3.png
 
 ## Priority Matrix
 
@@ -51,8 +51,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Create User component
 
 ## React Architectural Design
-
-Define the the React components and the architectural design of your app.
 
 https://drive.google.com/open?id=1-GmLXoniWp4VhqBZxDZLgAFRCUR4cujk
 
@@ -107,8 +105,7 @@ Helper functions should be generic enought that they can be reused in other appl
  #### SAMPLE.....
 | Library | What it Does | 
 | --- | :---: |  
-| Bootstrap | Used to help style my application | 
-| Giphy API | Used to get gifs to use | 
+| Twilio | API used to send out text messages | 
 
 
 ## Code Snippet
