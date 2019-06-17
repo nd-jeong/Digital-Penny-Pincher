@@ -23,6 +23,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 This application makes tracking a user's spending simpler, more organized, and will help keep them under their monthly budget. After a user creates an account, they can add their credit and/or debit cards. They then set their maximum budget limit for the month.
 
+The app will automatically notify the user via SMS text message and/or email when they have exceeded 50% of their monthly budget limit. The user can also edit when and how they receive alerts. Such as being alerted when their budget has hit a different threshold (25%, or 1/3rd etc.). User can also input the charge in their dashboard, with a user friendly UI to choose whether or not that transaction is Personal, Business, Charity, or Other.  Choosing "other" will allow user to input a description for that charge.
+
 ## Wireframes
 
 https://ga-students.slack.com/files/UHJMTP4EM/FKMBF71HT/wire_frame_for_projet_3.png
