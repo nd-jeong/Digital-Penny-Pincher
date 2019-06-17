@@ -5,7 +5,7 @@ const main = async () => {
         where: {}
     });
 
-    await CreditCard.destory({
+    await CreditCard.destroy({
         where: {}
     });
 
@@ -34,7 +34,7 @@ const main = async () => {
     const creditCardOne = await CreditCard.create({
         number: "0000-0000-0000-0000",
         expiration: "09/24",
-        ccv: 000,
+        ccv: "000",
         balance: 100,
         limit: 1000
     });
@@ -42,7 +42,7 @@ const main = async () => {
     const creditCardTwo = await CreditCard.create({
         number: "1111-1111-1111-1111",
         expiration: "02/25",
-        ccv: 635,
+        ccv: "635",
         balance: 150,
         limit: 500
     });
@@ -50,7 +50,7 @@ const main = async () => {
     const creditCardThree = await CreditCard.create({
         number: "0101-0101-0101-0101",
         expiration: "01/20",
-        ccv: 001,
+        ccv: "001",
         balance: 267,
         limit: 550
     });
@@ -58,98 +58,98 @@ const main = async () => {
     const creditCardFour = await CreditCard.create({
         number: "0202-0192-3836-2836",
         expiration: "11/23",
-        ccv: 980,
+        ccv: "980",
         balance: 0,
         limit: 0
     });
 
     const andyTransactionOne = await Transaction.create({
         amount: 2.99,
-        date: "06.02.2019",
+        date: "2019-06-02",
         time: "12:00",
         type: "checking" 
     });
 
     const andyTransactionTwo = await Transaction.create({
         amount: 5.99,
-        date: "06.06.2019",
+        date: "2019-06-06",
         time: "15:014",
         type: "checking" 
     });
 
     const andyTransactionThree = await Transaction.create({
         amount: 10.99,
-        date: "06.15.2019",
+        date: "2019-06-15",
         time: "09:00",
         type: "checking" 
     });
 
     const andyTransactionFour = await Transaction.create({
         amount: 17.89,
-        date: "06.16.2019",
+        date: "2019-06-16",
         time: "17:00",
         type: "checking" 
     });
 
     const candiceTransactionOne = await Transaction.create({
         amount: 4.99,
-        date: "06.01.2019",
+        date: "2019-06-01",
         time: "11:00",
         type: "checking" 
     });
 
     const candiceTransactionTwo = await Transaction.create({
         amount: 3.99,
-        date: "06.08.2019",
+        date: "2019-06-08",
         time: "10:45",
         type: "checking" 
     });
 
     const candiceTransactionThree = await Transaction.create({
         amount: 8.99,
-        date: "06.12.2019",
+        date: "2019-06-12",
         time: "15:30",
         type: "checking" 
     });
 
     const tedTransactionOne = await Transaction.create({
         amount: 12.99,
-        date: "06.03.2019",
+        date: "2019-06-03",
         time: "10:05",
         type: "checking" 
     });
 
     const tedTransactionTwo = await Transaction.create({
         amount: 6.84,
-        date: "06.04.2019",
+        date: "2019-06-04",
         time: "16:25",
         type: "checking" 
     });
 
     const tedTransactionThree = await Transaction.create({
         amount: 25.99,
-        date: "06.08.2019",
+        date: "2019-06-08",
         time: "15:48",
         type: "business" 
     });
 
     const tedTransactionFour = await Transaction.create({
         amount: 13.65,
-        date: "06.10.2019",
+        date: "2019-06-10",
         time: "12:05",
         type: "checking" 
     });
 
     const tedTransactionFive = await Transaction.create({
         amount: 36.37,
-        date: "06.12.2019",
+        date: "2019-06-12",
         time: "12:45",
         type: "business" 
     });
 
     const tedTransactionSix = await Transaction.create({
         amount: 12.99,
-        date: "06.15.2019",
+        date: "2019-06-15",
         time: "16:38",
         type: "checking" 
     });
