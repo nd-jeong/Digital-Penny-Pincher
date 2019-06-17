@@ -21,7 +21,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+This application makes tracking a user's spending simpler, more organized, and will help keep them under their monthly budget. After a user creates an account, they can add their credit and/or debit cards. They then set their maximum budget limit for the month.
 
 ## Wireframes
 
