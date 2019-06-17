@@ -10,8 +10,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Project Proposal | Incomplete
-|Day 2| Wireframes / Priority Matrix / Functional Components | Incomplete
+|Day 1| Project Proposal / Project Start | Incomplete
+|Day 2| Database / React Components /  | Incomplete
 |Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
 |Day 4| Pseudocode / actual code | Incomplete
 |Day 5| Initial Clickable Model  | Incomplete
@@ -48,6 +48,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### PostMVP 
 
 - Add authentication
+- Create User component
 
 ## React Architectural Design
 
@@ -89,7 +90,8 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Find and Work with API | H | 4hrs| 0 |
 | Styling | H | 5hrs| 0 |
 | Authentication | M | 7hrs| 0 |
-| Total | H | 55hrs| 0hrs | 
+| Create User Component | M | 4hrs| 0 |
+| Total | H | 59hrs| 0hrs | 
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
