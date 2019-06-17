@@ -35,15 +35,19 @@ Include a full list of features that have been prioritized based on the `Time an
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-#### SAMPLE.....
 #### MVP 
 
-- Find and use external api 
-- Render data on page in a list
+- Create and seed database
+- Render data on page
+- Create requests and links for a specific user's data: credit cards, transactions, and limits
+- Create forms for user to create credit card and transaction info
+- Create ability for user's to edit credit card and transaction info
+- Find and implement texting app
+- Styling
 
 #### PostMVP 
 
-- Add data to favorites section
+- Add authentication
 
 ## React Architectural Design
 
