@@ -1,7 +1,7 @@
 const sequelize = requires('sequelize');
 
 const db = new sequelize({
-    database: "",
+    database: "dpp_db",
     dialect: "postgres"
 });
 
@@ -28,14 +28,20 @@ const CreditCard = db.define("credit-cards", {
         unique: true
     },
     expiration: sequelize.STRING,
+    ccv: sequelize.INTEGER,
     balance: sequelize.INTEGER,
     limit: sequelize.INTEGER,
 });
 
 const Transaction = db.define("transactions", {
     amount: sequelize.INTEGER,
-    date: sequelize.STRING,
-    time: sequelize.STRING,
+    date: {
+        type: sequelize.DATEONLY,
+        get: function() {
+            return moment(this.getDataVlaue('DateTime')).format('DD.MM.YYYY');
+        }
+    },
+    time: sequelize.TIME,
     type: sequelize.STRING
 });
 
