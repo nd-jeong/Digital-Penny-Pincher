@@ -4,7 +4,6 @@ class KeypadButtons extends Component {
     
 
     handleClick = () => {
-        
         this.props.update(this.props.value);
     }
 
@@ -17,4 +16,4 @@ class KeypadButtons extends Component {
     }
 }
 
-export default KeypadButtons
+export default KeypadButtons;
