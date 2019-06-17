@@ -1,0 +1,16 @@
+{
+  "name": "Group-2-Project-3",
+  "version": "1.0.0",
+  "description": "# Project Overview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/nd-jeong/Group-2-Project-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
