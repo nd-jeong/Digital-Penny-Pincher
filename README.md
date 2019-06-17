@@ -29,7 +29,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+https://drive.google.com/open?id=1-E5_11Z1PpvB6PRFp225O1GjYy8j6Wi- 
 
 ### MVP/PostMVP - 5min
 
@@ -53,7 +53,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Define the the React components and the architectural design of your app.
 
-#### [SAMPLE FROM A MAP BASED PROJECT](https://res.cloudinary.com/dvjtpejbw/image/upload/v1540221204/20181022_111216.jpg)
+https://drive.google.com/open?id=1-GmLXoniWp4VhqBZxDZLgAFRCUR4cujk
 
 ## ERD
 
@@ -63,21 +63,33 @@ https://www.lucidchart.com/invitations/accept/81714e62-86e8-44c1-b460-671404b0d2
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-#### SAMPLE.....
 | Component | Description | 
 | --- | :---: |  
 | Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
-
+| Footer | This will render the footer at the bottom of the page |
+| Landing Page | This will render login/signup link | 
+| Nav | This will render all the links to navigate the app | 
+| Dashboard | This will render keypad to enter a new transaction and transaction type | 
+| Activity | This will render the current balance, balance limit, and recent transactions | 
+| Credit Cards | This will render the credit cards tied to the account | 
+| Settings/Profile | This will render the user's account info and a form to edit that information | 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
-#### SAMPLE.....
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs |
-| Total | H | 6hrs| 5hrs | 
+| Adding Forms | H | 5hrs| 0 |
+| Create and Seed Database | H | 6hrs| 0 |
+| Create Nav Component | H | 3hrs| 0 |
+| Create Header/Footer Component | H | 3hrs| 0 |
+| Create Landing Page Component | H | 4hrs| 0 |
+| Create Dashboard Component | H | 6hrs| 0 |
+| Create Activity Component | H | 6hrs| 0 |
+| Create Credit Cards Component inside Profile/Settings | H | 6hrs| 0 |
+| Find and Work with API | H | 4hrs| 0 |
+| Styling | H | 5hrs| 0 |
+| Authentication | M | 7hrs| 0 |
+| Total | H | 55hrs| 0hrs | 
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
