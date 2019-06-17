@@ -1,4 +1,4 @@
-const sequelize = requires('sequelize');
+const sequelize = require('sequelize');
 
 const db = new sequelize({
     database: "dpp_db",
@@ -22,25 +22,20 @@ const User = db.define("users", {
     }
 });
 
-const CreditCard = db.define("credit-cards", {
+const CreditCard = db.define("creditCards", {
     number: {
         type: sequelize.STRING,
         unique: true
     },
     expiration: sequelize.STRING,
-    ccv: sequelize.INTEGER,
+    ccv: sequelize.STRING,
     balance: sequelize.INTEGER,
     limit: sequelize.INTEGER,
 });
 
 const Transaction = db.define("transactions", {
-    amount: sequelize.INTEGER,
-    date: {
-        type: sequelize.DATEONLY,
-        get: function() {
-            return moment(this.getDataVlaue('DateTime')).format('DD.MM.YYYY');
-        }
-    },
+    amount: sequelize.DECIMAL(5,2),
+    date: sequelize.DATEONLY,
     time: sequelize.TIME,
     type: sequelize.STRING
 });
