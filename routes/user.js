@@ -2,6 +2,12 @@ const express = require('express');
 const userRouter = express.Router();
 const {User} = require('../models/index');
 
+userRouter.get('/', async (req, res) => {
+    const users = await User.findAll();
+
+    res.json(users);
+});
+
 userRouter.get('/:id', async (req, res) => {
     const user = await User.findByPk(req.params.id);
 
