@@ -9,9 +9,29 @@ class Dashboard extends Component {
 
     this.state = {
       buttons: ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "del"],
-      readout: ""
+      readout: "",
+      user: [],
+      creditCard: [],
+      transaction: []
     };
     this.updateReadout = this.updateReadout.bind(this);
+  }
+
+  async componentDidMount() {
+      const resOne = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+        const user = resOne.data;
+
+        const resTwo = await axios.get(`http://localhost:4567/creditcards/${this/this.props.match.params.id}`);
+        const creditCard = resTwo.data;
+
+        const resThree = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
+        const transaction = resThree.data;
+
+        this.setState({
+            user,
+            creditCard,
+            transaction
+        });
   }
 
   updateReadout = button => {
