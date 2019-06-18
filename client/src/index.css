@@ -23,6 +23,7 @@ body {
     height: 25px;
     background: rgba(100, 98, 98, 0.952);
     animation: animate 25s linear infinite;
+    bottom: -150px;
 }
 
 .bubbles li:nth-child(1) {
@@ -53,6 +54,8 @@ body {
     width: 60px;
     height: 60px;
     animation-delay: 18s;
+    animation-duration: 12s;
+
 }
 
 .bubbles li:nth-child(5) {
