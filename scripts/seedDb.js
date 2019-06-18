@@ -1,13 +1,15 @@
-const {User, CreditCard, Transaction} = require('../models/index');
+const {User, 
+        // CreditCard, 
+        Transaction} = require('../models/index');
 
 const main = async () => {
     await User.destroy({
         where: {}
     });
 
-    await CreditCard.destroy({
-        where: {}
-    });
+    // await CreditCard.destroy({
+    //     where: {}
+    // });
 
     await Transaction.destroy({
         where: {}
@@ -16,52 +18,58 @@ const main = async () => {
     const andy = await User.create({
         name: "Andy Jeong",
         email: "andyj@fakemail.com",
-        phoneNumber: "000-000-0000"
+        phoneNumber: "000-000-0000",
+        balance: 0,
+        limit: 1000
     });
 
     const candice = await User.create({
         name: "Candice Agard",
         email: "candice@fakemail.com",
-        phoneNumber: "111-111-1111"
+        phoneNumber: "111-111-1111",
+        balance: 100,
+        limit: 10000
     });
 
     const ted = await User.create({
         name: "Ted Schwartz",
         email: "tedschwartz@fakemail.com",
-        phoneNumber: "222-222-2222"
+        phoneNumber: "222-222-2222",
+        balance: 192,
+        limit: 19000
     });
 
-    const creditCardOne = await CreditCard.create({
-        number: "0000-0000-0000-0000",
-        expiration: "09/24",
-        ccv: "000",
-        balance: 100,
-        limit: 1000
-    });
+    // const creditCardOne = await CreditCard.create({
+    //     number: "0000-0000-0000-0000",
+    //     expiration: "09/24",
+    //     ccv: "000",
+    //     balance: 100,
+    //     limit: 1000
+    // });
 
-    const creditCardTwo = await CreditCard.create({
-        number: "1111-1111-1111-1111",
-        expiration: "02/25",
-        ccv: "635",
-        balance: 150,
-        limit: 500
-    });
+    // const creditCardTwo = await CreditCard.create({
+    //     number: "1111-1111-1111-1111",
+    //     expiration: "02/25",
+    //     ccv: "635",
+    //     balance: 150,
+    //     limit: 500
+    // });
 
-    const creditCardThree = await CreditCard.create({
-        number: "0101-0101-0101-0101",
-        expiration: "01/20",
-        ccv: "001",
-        balance: 267,
-        limit: 550
-    });
+    // const creditCardThree = await CreditCard.create({
+    //     number: "0101-0101-0101-0101",
+    //     expiration: "01/20",
+    //     ccv: "001",
+    //     balance: 267,
+    //     limit: 550
+    // });
 
-    const creditCardFour = await CreditCard.create({
-        number: "0202-0192-3836-2836",
-        expiration: "11/23",
-        ccv: "980",
-        balance: 0,
-        limit: 0
-    });
+    // const creditCardFour = await CreditCard.create({
+    //     number: "0202-0192-3836-2836",
+    //     expiration: "11/23",
+    //     ccv: "980",
+    //     balance: 0,
+    //     limit: 0
+    // });
 
     const andyTransactionOne = await Transaction.create({
         amount: 2.99,
@@ -154,26 +162,42 @@ const main = async () => {
         type: "checking" 
     });
 
-    await creditCardOne.setUser(andy);
-    await creditCardTwo.setUser(candice);
-    await creditCardThree.setUser(ted);
-    await creditCardFour.setUser(ted);
+    // await creditCardOne.setUser(andy);
+    // await creditCardTwo.setUser(candice);
+    // await creditCardThree.setUser(ted);
+    // await creditCardFour.setUser(ted);
 
-    await andyTransactionOne.setCreditCard(creditCardOne);
-    await andyTransactionTwo.setCreditCard(creditCardOne);
-    await andyTransactionThree.setCreditCard(creditCardOne);
-    await andyTransactionFour.setCreditCard(creditCardOne);
+    // await andyTransactionOne.setCreditCard(creditCardOne);
+    // await andyTransactionTwo.setCreditCard(creditCardOne);
+    // await andyTransactionThree.setCreditCard(creditCardOne);
+    // await andyTransactionFour.setCreditCard(creditCardOne);
 
-    await candiceTransactionOne.setCreditCard(creditCardTwo);
-    await candiceTransactionTwo.setCreditCard(creditCardTwo);
-    await candiceTransactionThree.setCreditCard(creditCardTwo);
+    // await candiceTransactionOne.setCreditCard(creditCardTwo);
+    // await candiceTransactionTwo.setCreditCard(creditCardTwo);
+    // await candiceTransactionThree.setCreditCard(creditCardTwo);
 
-    await tedTransactionOne.setCreditCard(creditCardThree);
-    await tedTransactionTwo.setCreditCard(creditCardThree);
-    await tedTransactionThree.setCreditCard(creditCardFour);
-    await tedTransactionFour.setCreditCard(creditCardThree);
-    await tedTransactionFive.setCreditCard(creditCardFour);
-    await tedTransactionSix.setCreditCard(creditCardThree);
+    // await tedTransactionOne.setCreditCard(creditCardThree);
+    // await tedTransactionTwo.setCreditCard(creditCardThree);
+    // await tedTransactionThree.setCreditCard(creditCardFour);
+    // await tedTransactionFour.setCreditCard(creditCardThree);
+    // await tedTransactionFive.setCreditCard(creditCardFour);
+    // await tedTransactionSix.setCreditCard(creditCardThree);
+
+    await andyTransactionOne.setUser(andy);
+    await andyTransactionTwo.setUser(andy);
+    await andyTransactionThree.setUser(andy);
+    await andyTransactionFour.setUser(andy);
+
+    await candiceTransactionOne.setUser(candice);
+    await candiceTransactionTwo.setUser(candice);
+    await candiceTransactionThree.setUser(candice);
+
+    await tedTransactionOne.setUser(ted);
+    await tedTransactionTwo.setUser(ted);
+    await tedTransactionThree.setUser(ted);
+    await tedTransactionFour.setUser(ted);
+    await tedTransactionFive.setUser(ted);
+    await tedTransactionSix.setUser(ted);
 
     process.exit();
 };

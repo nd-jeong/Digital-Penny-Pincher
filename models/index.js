@@ -24,19 +24,21 @@ const User = db.define("user", {
         type: sequelize.STRING,
         allowNull: true,
         unique: true
-    }
+    },
+    balance: sequelize.INTEGER,
+    limit: sequelize.INTEGER
 });
 
-const CreditCard = db.define("creditCard", {
-    number: {
-        type: sequelize.STRING,
-        unique: true
-    },
-    expiration: sequelize.STRING,
-    ccv: sequelize.STRING,
-    balance: sequelize.INTEGER,
-    limit: sequelize.INTEGER,
-});
+// const CreditCard = db.define("creditCard", {
+//     number: {
+//         type: sequelize.STRING,
+//         unique: true
+//     },
+//     expiration: sequelize.STRING,
+//     ccv: sequelize.STRING,
+//     balance: sequelize.INTEGER,
+//     limit: sequelize.INTEGER,
+// });
 
 const Transaction = db.define("transaction", {
     amount: sequelize.DECIMAL(5,2),
@@ -45,14 +47,16 @@ const Transaction = db.define("transaction", {
     type: sequelize.STRING
 });
 
-User.hasMany(CreditCard);
-CreditCard.belongsTo(User);
-CreditCard.hasMany(Transaction);
-Transaction.belongsTo(CreditCard);
+// User.hasMany(CreditCard);
+// CreditCard.belongsTo(User);
+// CreditCard.hasMany(Transaction);
+// Transaction.belongsTo(CreditCard);
+User.hasMany(Transaction);
+Transaction.belongsTo(User);
 
 module.exports = {
     db,
     User,
-    CreditCard,
+    // CreditCard,
     Transaction
 };
