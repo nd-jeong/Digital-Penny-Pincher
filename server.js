@@ -4,8 +4,11 @@ const app = express();
 const {userRouter} = require('./routes/user');
 const {creditCardRouter} = require('./routes/creditCard');
 const {transactionRouter} = require('./routes/transaction');
+const cors = require('cors');
 
 app.use(bodyParser.json());
+
+app.use(cors());
 
 app.use((err, req, res, next) => {
     console.warn(err.stack);
