@@ -2,10 +2,15 @@ const sequelize = require('sequelize');
 
 const db = new sequelize({
     database: "dpp_db",
-    dialect: "postgres"
+    dialect: "postgres",
+    define: {
+        underscored: true,
+        returning: true,
+        freezeTableName: true
+    }
 });
 
-const User = db.define("users", {
+const User = db.define("user", {
     name: {
         type: sequelize.STRING,
         allowNull: false
@@ -22,7 +27,7 @@ const User = db.define("users", {
     }
 });
 
-const CreditCard = db.define("creditCards", {
+const CreditCard = db.define("creditCard", {
     number: {
         type: sequelize.STRING,
         unique: true
@@ -33,7 +38,7 @@ const CreditCard = db.define("creditCards", {
     limit: sequelize.INTEGER,
 });
 
-const Transaction = db.define("transactions", {
+const Transaction = db.define("transaction", {
     amount: sequelize.DECIMAL(5,2),
     date: sequelize.DATEONLY,
     time: sequelize.TIME,
