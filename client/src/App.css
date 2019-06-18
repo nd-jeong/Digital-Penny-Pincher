@@ -7,6 +7,12 @@
   overflow-y: hidden;
 } */
 
+.dashboard-nav-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-content: space-between;
+}
 
 .dashboard-container {
   display: flex;
@@ -17,8 +23,11 @@
   bottom: 0;
 }
 
-.dashboard-balance {
-  
+.dashboard-summary {
+  text-align: left;
+  font-size: 20px;
+  margin: auto;
+
 }
 
 
@@ -28,12 +37,13 @@
   white-space: nowrap;
   position: relative;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 4em;
+  /* font-size: 80px; */
+  font-size: 5em;
   text-align: center;
 
   display: grid;
-  grid-template-columns: repeat(3, 90px);
-  grid-template-rows: repeat(5, 90px);
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(5, 100px);
   grid-gap: 0px;
 }
 

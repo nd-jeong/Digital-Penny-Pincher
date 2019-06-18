@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
+import NavDashboard from "./components/NavDashboard";
 import Dashboard from "./components/Dashboard";
-// import KeypadButtons from "./components/KeypadButtons";
+
 
 
 
@@ -13,7 +14,7 @@ class App extends Component {
       <div className="App-container">
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          {/* <Route exact path="/nav" component={NavDashboard} /> */}
+          <Route exact path="/nav_dashboard" component={NavDashboard} />
           {/* <Route exact path="/createuser" component={CreateUser} /> */}
           <Route exact path="/dashboard" component={Dashboard} />
           {/* <Route exact path="/dashboard/keypad" component={KeypadButtons} /> */}
