@@ -34,7 +34,11 @@ class Dashboard extends Component {
     let readout = this.state.readout;
     return (
       <div className="dashboard-container">
+
+        <div className="dashboard-nav">Nav goes here</div>
+        
         <div className="keypad-container">
+          <div className="dashboard-balance">Current Month balance:</div>
           <div className="read-out"> {readout} </div>
           {buttons.map(button => (
             <KeypadButtons

@@ -17,6 +17,10 @@
   bottom: 0;
 }
 
+.dashboard-balance {
+  
+}
+
 
 .keypad-container {
   margin: auto;
@@ -24,16 +28,18 @@
   white-space: nowrap;
   position: relative;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 5em;
+  font-size: 4em;
   text-align: center;
 
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(5, 100px);
+  grid-template-columns: repeat(3, 90px);
+  grid-template-rows: repeat(5, 90px);
   grid-gap: 0px;
-
-
 }
+
+/* .keypad-buttons {
+  font-size: 
+} */
 
 .read-out {
   grid-column: 1 / -1;
