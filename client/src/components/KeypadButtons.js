@@ -9,7 +9,7 @@ class KeypadButtons extends Component {
 
     render() {
         return (
-            <div onClick={this.handleClick}>
+            <div className="keypad-buttons" onClick={this.handleClick}>
                 {this.props.value}
             </div>
         )

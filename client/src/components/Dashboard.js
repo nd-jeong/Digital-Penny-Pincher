@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import {Link} from "react-router-dom";
 import KeypadButtons from "./KeypadButtons";
+import NavDashboard from "./NavDashboard";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -34,7 +35,22 @@ class Dashboard extends Component {
     let readout = this.state.readout;
     return (
       <div className="dashboard-container">
+
+        <div className="dashboard-nav">
+          <div>Nav goes here</div>
+        <NavDashboard />
+
+        </div>
+        
         <div className="keypad-container">
+          <div className="dashboard-summary">
+            <div>Current Month balance: $1500 (Limit: $3000)</div>
+            <br></br>
+            <div>Daily Budget: (formula: available budget/days left in month)</div>
+          </div>
+          
+          {/* <div className="dashboard-daily-budget"> Daily Budget: (formula: available budget/days left in month) </div> */}
+          
           <div className="read-out"> {readout} </div>
           {buttons.map(button => (
             <KeypadButtons
