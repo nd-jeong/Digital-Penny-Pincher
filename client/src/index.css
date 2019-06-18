@@ -109,5 +109,10 @@ body {
     100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
+        border-top-right-radius: 75%;
+        border-bottom-left-radius: 75%;
+        border-top-left-radius: 25%;
+        box-shadow: 5px 20px 20px 5px rgb(109, 36, 201);
+
     }
 }
