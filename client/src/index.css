@@ -23,6 +23,7 @@ body {
     height: 25px;
     background: rgba(100, 98, 98, 0.952);
     animation: animate 25s linear infinite;
+    bottom: -150px;
 }
 
 .bubbles li:nth-child(1) {
@@ -53,6 +54,8 @@ body {
     width: 60px;
     height: 60px;
     animation-delay: 18s;
+    animation-duration: 12s;
+
 }
 
 .bubbles li:nth-child(5) {
@@ -106,5 +109,10 @@ body {
     100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
+        border-top-right-radius: 75%;
+        border-bottom-left-radius: 75%;
+        border-top-left-radius: 25%;
+        box-shadow: 5px 20px 20px 5px rgb(109, 36, 201);
+
     }
 }
