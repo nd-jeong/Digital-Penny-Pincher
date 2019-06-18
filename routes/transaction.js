@@ -3,48 +3,36 @@ const transactionRouter = express.Router();
 const {Transaction, CreditCard} = require('../models/index');
 
 transactionRouter.get('/:userid', async (req, res) => {
-    const userCards = await CreditCard.findAll({
+    const userCards = await CreditCard.findOne({
         where: {
-            userId: req.params.userid
+            user_id: req.params.userid
         }
     });
 
     const allTransactions = await Transaction.findAll({
         where: {
-            creditCardId: userCards.id
+            credit_card_id: userCards.id
         } 
     });
 
     res.json(allTransactions);
 });
 
-transactionRouter.create('/:userid/:creditcardid/create', async (req, res) => {
-    const userCards = await CreditCard.findAll({
-        where: {
-            userId: req.params.userid
-        }
-    });
+transactionRouter.post('/:creditcardid/create', async (req, res) => {
+    const newTransaction = await Transaction.create(req.body);
 
-    const newTransaction = await Transaction.create(req.body, {
-        where: {
-            creditCardId: userCards.id
-        }
-    });
-
+    const creditCard = await CreditCard.findByPk(req.params.creditcardid);
+    
+    newTransaction.setCreditCard(creditCard);
+    
     res.json({newTransaction});
 });
 
-transactionRouter.delete('/:userid/:creditcardid/:id', async (req, res) => {
-    const userCards = await CreditCard.findAll({
-        where: {
-            userId: req.params.userid
-        }
-    });
-
+transactionRouter.delete('/:userid/:creditcardid/', async (req, res) => {
     const transaction = await Transaction.findAll({
         where: {
-            creditCardId: req.params.creditcardid,
-            id: req.params.id
+            credit_card_id: req.params.creditcardid,
+            user_id: req.params.userid
         }
     });
 
