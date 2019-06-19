@@ -7,7 +7,7 @@ import Dashboard from "./components/Dashboard";
 import ProfileSettings from "./components/ProfileSettings";
 import BudgetTracker from "./components/BudgetTracker";
 import MyTransactions from "./components/MyTransactions";
-
+import UpdateTransaction from "./components/UpdateTransaction";
 
 
 class App extends Component {
@@ -16,10 +16,6 @@ render() {
       <div className="App-container">
         <Switch>
           <Route exact path="/" component={LandingPage} />
-
-         
-
-
           <Route exact path="/nav_dashboard" component={NavDashboard} />
           {/* <Route exact path="/createuser" component={CreateUser} /> */}
           <Route exact path="/dashboard/:id" component={Dashboard} />
@@ -31,11 +27,7 @@ render() {
           {/* <Route exact path="/dashboard/budget/edit" component={UpdateBudget} /> */}
           <Route exact path="/dashboard/:id/transactions" component={MyTransactions} />
 
-          {/* <Route exact path="/dashboard/creditcards/edit" component={UpdateCreditCard} /> */}
-
-   
-
-
+          <Route exact path="/dashboard/:id/transactions/:transactionid/" component={UpdateTransaction} />
         </Switch>
       </div>
     )

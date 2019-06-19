@@ -25,14 +25,14 @@ class Dashboard extends Component {
     }
 
     async componentDidMount() {
-        const resOne = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
-        const user = resOne.data;
+        const userInfo = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+        const user = userInfo.data;
 
         // const resTwo = await axios.get(`http://localhost:4567/creditcards/${this.props.match.params.id}`);
         // const creditCard = resTwo.data;
 
-        const resThree = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
-        const transaction = resThree.data;
+        const transactionList = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
+        const transaction = transactionList.data;
 
         this.setState({
             user,
@@ -44,16 +44,24 @@ class Dashboard extends Component {
 
     async componentDidUpdate() {
         if (this.state.transactionType) {
-            await axios.post(`http://localhost:4567/transactions/${this.props.match.params.id}/create`, {
+            // add error catch before updating balance
+            const newTransaction = await axios.post(`http://localhost:4567/transactions/${this.props.match.params.id}/create`, {
                 amount: this.state.readout,
                 type: this.state.transactionType,
                 date: this.state.date,
                 time: this.state.time
-            });
+            })
+            
+            const updatedTransactionArray = this.state.transaction;
+            updatedTransactionArray.push(newTransaction.data.newTransaction);
 
             this.setState({
-                transactionType: ''
-            });
+                transactionType: '',
+                readout: '',
+                transaction: updatedTransactionArray
+            })
+
+            this.totalTransactions();
         }
     }
 
@@ -78,27 +86,30 @@ class Dashboard extends Component {
 
         // https://tecadmin.net/get-current-date-time-javascript/
         const today = new Date();
-        var date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear();
+        let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         
         this.setState({
             transactionType,
             date,
             time
         });
+
+        this.totalTransactions();
     }
 
     totalTransactions() {
         const transactionArray = this.state.transaction;
         const amountArray = [];
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
         for (let i = 0; i < transactionArray.length; i++) {
             let transaction = transactionArray[i].amount;
             transaction = Number.parseFloat(transaction);
             amountArray.push(transaction);
         }
-    
+        
         const balance = amountArray.reduce(reducer);
         
         this.setState({
@@ -112,6 +123,8 @@ class Dashboard extends Component {
         let user = this.state.user;
 
         return (
+
+
             <div className="dashboard-container">
 
                 <div className="dashboard-nav">
