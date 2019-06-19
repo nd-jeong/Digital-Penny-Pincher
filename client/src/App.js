@@ -7,6 +7,7 @@ import Dashboard from "./components/Dashboard";
 import ProfileSettings from "./components/ProfileSettings";
 import BudgetTracker from "./components/BudgetTracker";
 import MyTransactions from "./components/MyTransactions";
+import UpdateUser from "./components/UpdateUser";
 
 
 
@@ -20,7 +21,7 @@ render() {
           {/* <Route exact path="/createuser" component={CreateUser} /> */}
           <Route exact path="/dashboard/:id" component={Dashboard} />
           <Route exact path="/dashboard/:id/profile" component={ProfileSettings} />
-          {/* <Route exact path="/dashboard/profile/edit" component={UpdateUser} /> */}
+          <Route exact path="/dashboard/:id/profile/edit" component={UpdateUser} />
 
 
           <Route exact path="/dashboard/:id/budget" component={BudgetTracker} />

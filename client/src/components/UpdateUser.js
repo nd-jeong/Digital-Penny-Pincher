@@ -17,9 +17,9 @@ class UpdateUser extends Component {
   }
   // When page loads fetch the current data and save/set it to the state:
   async componentDidMount() {
-    const response = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+    const response = await axios.get(`/users/${this.props.match.params.id}`)
     console.log(response);
-    const updateUser = response.data.updateUser;
+    const updateUser = response.data.updateUser
     this.setState({
       limit: updateUser.limit,
       name: updateUser.name,
@@ -54,9 +54,9 @@ class UpdateUser extends Component {
   render() {
     return (
       <div>
-        {this.state.redirect ? <Redirect to={`http://localhost:4567/users/${this.props.match.params.id}`} />: null}
+        {this.state.redirect ? <Redirect to={`http://localhost:4567/profile/${this.props.match.params.id}`} />: null}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit} >
-            
+
             <input
               name="limit"
               type="number"
@@ -93,8 +93,4 @@ class UpdateUser extends Component {
 
 export default UpdateUser;
 
-// const andy = await User.create({
-//     name: "Andy Jeong",
-//     email: "andyj@fakemail.com",
-//     phoneNumber: "000-000-0000",
-//     limit: 1000
+
