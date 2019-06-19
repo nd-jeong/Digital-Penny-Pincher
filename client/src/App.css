@@ -66,3 +66,18 @@
   line-height: 1;
   
 }
+
+.transaction-div {
+    padding: 25px;
+    text-align: left;
+}
+
+.transactions-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.transactions-wrapper {
+    height: 1000px;
+    overflow: auto;
+}

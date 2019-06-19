@@ -71,27 +71,27 @@ const main = async () => {
     const andyTransactionOne = await Transaction.create({
         amount: 2.99,
         type: "personal",
-        date: "2019-06-02",
+        date: "06/02/2019",
         time: "12:00"
     });
 
     const andyTransactionTwo = await Transaction.create({
         amount: 5.99,
         type: "personal",
-        date: "2019-06-06",
+        date: "06/06/2019",
         time: "15:014"
     });
 
     const andyTransactionThree = await Transaction.create({
         amount: 10.99,
         type: "personal", 
-        date: "2019-06-15",
+        date: "06/15/2019",
         time: "09:00"
     });
 
     const andyTransactionFour = await Transaction.create({
         amount: 17.89,
-        date: "2019-06-16",
+        date: "06/16/2019",
         time: "17:00",
         type: "personal" 
     });
@@ -99,63 +99,63 @@ const main = async () => {
     const candiceTransactionOne = await Transaction.create({
         amount: 4.99,
         type: "personal",
-        date: "2019-06-01",
+        date: "06/01/2019",
         time: "11:00"
     });
 
     const candiceTransactionTwo = await Transaction.create({
         amount: 3.99,
         type: "personal",
-        date: "2019-06-08",
+        date: "06/08/2019",
         time: "10:45",
     });
 
     const candiceTransactionThree = await Transaction.create({
         amount: 8.99,
         type: "personal",
-        date: "2019-06-12",
+        date: "06/12/2019",
         time: "15:30"
     });
 
     const tedTransactionOne = await Transaction.create({
         amount: 12.99,
         type: "personal",
-        date: "2019-06-03",
+        date: "06/03/2019",
         time: "10:05"
     });
 
     const tedTransactionTwo = await Transaction.create({
         amount: 6.84,
         type: "personal",
-        date: "2019-06-04",
+        date: "06/04/2019",
         time: "16:25"
     });
 
     const tedTransactionThree = await Transaction.create({
         amount: 25.99,
         type: "business",
-        date: "2019-06-08",
+        date: "06/08/2019",
         time: "15:48"
     });
 
     const tedTransactionFour = await Transaction.create({
         amount: 13.65,
         type: "personal",
-        date: "2019-06-10",
+        date: "06/10/2019",
         time: "12:05"
     });
 
     const tedTransactionFive = await Transaction.create({
         amount: 36.37,
         type: "business",
-        date: "2019-06-12",
+        date: "06/12/2019",
         time: "12:45" 
     });
 
     const tedTransactionSix = await Transaction.create({
         amount: 12.99,
         type: "personal", 
-        date: "2019-06-15",
+        date: "06/15/2019",
         time: "16:38"
     });
 
