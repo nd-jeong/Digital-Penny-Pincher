@@ -1,4 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline|Gothic+A1&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gothic A1', sans-serif;
+
+}
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #b0eeba;
+    left: -200px;
+    transition: all 500ms linear;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+   color: rgb(61, 25, 120);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid;
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 230px;
+    top: 20px;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #151719;
+    margin: 5px 0px;
+}
+
 
 
 body {

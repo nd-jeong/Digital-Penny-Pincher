@@ -27,6 +27,7 @@ render() {
           {/* <Route exact path="/dashboard/budget/edit" component={UpdateBudget} /> */}
           <Route exact path="/dashboard/:id/transactions" component={MyTransactions} />
 
+
           {/* <Route exact path="/dashboard/creditcards/edit" component={UpdateCreditCard} /> */}
         </Switch>
       </div>

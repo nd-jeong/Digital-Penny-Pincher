@@ -28,6 +28,8 @@ const User = db.define("user", {
     limit: sequelize.INTEGER
 });
 
+
+
 // const CreditCard = db.define("creditCard", {
 //     number: {
 //         type: sequelize.STRING,
@@ -38,6 +40,7 @@ const User = db.define("user", {
 //     balance: sequelize.INTEGER,
 //     limit: sequelize.INTEGER,
 // });
+
 
 const Transaction = db.define("transaction", {
     amount: sequelize.DECIMAL(5,2),
