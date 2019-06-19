@@ -8,7 +8,7 @@
 } */
 
 .dashboard-nav {
-  background-color: #85daef;
+  background-color: #84ecaf;
 
 }
 
@@ -43,8 +43,9 @@
   position: relative;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   /* font-size: 80px; */
-  font-size: 5em;
+  font-size: 4em;
   text-align: center;
+  background-color: #85daef;
 
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -67,5 +68,10 @@
 .transaction-type-container {
   display: flex;
   margin: auto;
+  flex-direction: column;
+  padding: 10px;
+  
+
+  
   
 }
