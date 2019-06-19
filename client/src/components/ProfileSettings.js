@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-// import NavDashboard from "./NavDashboard";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-// import UpdateUser from "./UpdateUser";
 
 
 class ProfileSettings extends Component {

@@ -8,7 +8,7 @@ import ProfileSettings from "./components/ProfileSettings";
 import BudgetTracker from "./components/BudgetTracker";
 import MyTransactions from "./components/MyTransactions";
 import UpdateUser from "./components/UpdateUser";
-
+import UpdateTransaction from "./components/UpdateTransaction";
 
 
 class App extends Component {
@@ -28,7 +28,7 @@ render() {
           {/* <Route exact path="/dashboard/budget/edit" component={UpdateBudget} /> */}
           <Route exact path="/dashboard/:id/transactions" component={MyTransactions} />
 
-          {/* <Route exact path="/dashboard/creditcards/edit" component={UpdateCreditCard} /> */}
+          <Route exact path="/dashboard/:id/transactions/:transactionid/" component={UpdateTransaction} />
         </Switch>
       </div>
     )
