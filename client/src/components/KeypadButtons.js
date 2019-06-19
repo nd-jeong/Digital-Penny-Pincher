@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class KeypadButtons extends Component {
     
-
     handleClick = () => {
         this.props.update(this.props.value);
     }
