@@ -85,7 +85,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Create and Seed Database | H | 6hrs| 4 |
 | Create Nav Component | H | 3hrs| 0 |
 | Create Header/Footer Component | H | 3hrs| 0 |
-| Create Landing Page Component | H | 4hrs| 0 |
+| Create Landing Page Component | H | 4hrs| 5 |
 | Create Dashboard Component | H | 6hrs| 0 |
 | Create Activity Component | H | 6hrs| 0 |
 | Create Credit Cards Component inside Profile/Settings | H | 6hrs| 0 |
@@ -93,7 +93,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Styling | H | 5hrs| 0 |
 | Authentication | M | 7hrs| 0 |
 | Create User Component | M | 4hrs| 0 |
-| Total | H | 59hrs| 0hrs | 
+| Total | H | 59hrs| 9hrs | 
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
@@ -104,9 +104,7 @@ Helper functions should be generic enought that they can be reused in other appl
 | Capitalize | This will capitalize the first letter in a string of text | 
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
- 
- #### SAMPLE.....
+
 | Library | What it Does | 
 | --- | :---: |  
 | Twilio | API used to send out text messages | 
@@ -132,8 +130,6 @@ We decided to remove the credit cards component and table. Instead we will add a
 | Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: Post request did not add foreign key to table automatically                       
+**RESOLUTION**: Set relationship in post request
