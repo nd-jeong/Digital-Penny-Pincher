@@ -12,9 +12,16 @@ class Dashboard extends Component {
             buttons: ["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "del"],
             readout: "",
             user: [],
-            transaction: []
+            transaction: [],
+            transactionType: '',
+            balance: 0,
+            date: '',
+            time: ''
         };
+
         this.updateReadout = this.updateReadout.bind(this);
+        this.setTransactionInfo = this.setTransactionInfo.bind(this);
+        this.totalTransactions = this.totalTransactions.bind(this);
     }
 
     async componentDidMount() {
@@ -31,6 +38,23 @@ class Dashboard extends Component {
             user,
             transaction
         });
+
+        this.totalTransactions();
+    }
+
+    async componentDidUpdate() {
+        if (this.state.transactionType) {
+            await axios.post(`http://localhost:4567/transactions/${this.props.match.params.id}/create`, {
+                amount: this.state.readout,
+                type: this.state.transactionType,
+                date: this.state.date,
+                time: this.state.time
+            });
+
+            this.setState({
+                transactionType: ''
+            });
+        }
     }
 
     updateReadout = button => {
@@ -49,24 +73,57 @@ class Dashboard extends Component {
         }
     };
 
+    setTransactionInfo(event) {
+        const transactionType = event.target.value;
+
+        // https://tecadmin.net/get-current-date-time-javascript/
+        const today = new Date();
+        var date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        
+        this.setState({
+            transactionType,
+            date,
+            time
+        });
+    }
+
+    totalTransactions() {
+        const transactionArray = this.state.transaction;
+        const amountArray = [];
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+        for (let i = 0; i < transactionArray.length; i++) {
+            let transaction = transactionArray[i].amount;
+            transaction = Number.parseFloat(transaction);
+            amountArray.push(transaction);
+        }
+    
+        const balance = amountArray.reduce(reducer);
+        
+        this.setState({
+            balance
+        });
+    }
+
     render() {
         let buttons = this.state.buttons;
         let readout = this.state.readout;
         let user = this.state.user;
-        let transactions = this.state.transaction;
 
         return (
             <div className="dashboard-container">
 
                 <div className="dashboard-nav">
                     <div>Nav goes here</div>
-                    <NavDashboard />
-
+                    <NavDashboard 
+                        userid={this.state.user.id}
+                    />
                 </div>
 
                 <div className="keypad-container">
                     <div className="dashboard-summary">
-                        <div>Current Month balance: ${user.balance} (Limit: ${user.limit})</div>
+                        <div>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</div>
                         <br></br>
                         <div>Daily Budget: (formula: available budget/days left in month)</div>
                     </div>
@@ -82,10 +139,10 @@ class Dashboard extends Component {
                         />
                     ))}
                     <div className="transaction-type-container">
-                        <button className="personal"> Personal </button>
-                        <button className="business"> Business </button>
-                        <button className="charity"> Charitable Donations </button>
-                        <button className="other"> Other </button>
+                        <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
+                        <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
+                        <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
+                        <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
                     </div>
                 </div>
             </div>
