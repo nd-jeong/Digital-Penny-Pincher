@@ -6,8 +6,13 @@ class MyTransactions extends Component {
         super();
 
         this.state = {
-            transactionArray: []
+            transactionArray: [],
+            transactionType: '',
+            filter: false,
+            filteredTransactionArray: []
         }
+
+        this.transactionTypeFilter = this.transactionTypeFilter.bind(this);
     }
 
     async componentDidMount() {
@@ -18,23 +23,73 @@ class MyTransactions extends Component {
         });
     }
 
+    async componentDidUpdate() {
+        if (this.state.transactionType) {
+            const res = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}/${this.state.transactionType}`);
+
+            this.setState({
+                filteredTransactionArray: res.data,
+                filter: true,
+                transactionType: ''
+            })
+        }
+    }
+
+    async transactionTypeFilter(event) {
+        const transactionType = event.target.value;
+        
+        if (transactionType) {
+            this.setState({
+                transactionType
+            });
+        } else {
+            this.setState({
+                filter: false
+            })
+        }
+        
+    }
+
     render() {
         const transactionArray = this.state.transactionArray;
         const transactions = transactionArray.map(transaction => {
             return(
-                <div key={transaction.id}>
-                    <p>{transaction.date}</p>
-                    <p>{transaction.time}</p>
-                    <p>{transaction.amount}</p>
-                    <p>{transaction.type}</p>
+                <div key={transaction.id} className="transaction-div">
+                    <p>Date: {transaction.date}</p>
+                    <p>Time: {transaction.time}</p>
+                    <p>Amount: {transaction.amount}</p>
+                    <p>Type: {transaction.type}</p>
+                </div>
+            )
+        });
+
+        const filteredTransactionArray = this.state.filteredTransactionArray;
+        const filteredTransactions = filteredTransactionArray.map(transaction => {
+            return(
+                <div key={transaction.id} className="transaction-div">
+                    <p>Date: {transaction.date}</p>
+                    <p>Time: {transaction.time}</p>
+                    <p>Amount: {transaction.amount}</p>
+                    <p>Type: {transaction.type}</p>
                 </div>
             )
         })
+
         return(
-            <div className="transactions-container">
-                 Transations(container)
-                {transactions}
+            <div className="transactions-wrapper">
+                <h2>My Transactions</h2>
+                <div>
+                    <button value="" onClick={this.transactionTypeFilter}>All</button>
+                    <button value="personal" onClick={this.transactionTypeFilter}>Personal</button>
+                    <button value="business" onClick={this.transactionTypeFilter}>Business</button>
+                    <button value="charity" onClick={this.transactionTypeFilter}>Charitable Donations</button>
+                    <button value="other" onClick={this.transactionTypeFilter}>Other</button>
+                </div>
+                <div className="transactions-container">
+                    {this.state.filter ? filteredTransactions : transactions}
+                </div>
             </div>
+            
         )
     }
 }
