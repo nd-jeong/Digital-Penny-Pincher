@@ -14,7 +14,7 @@ class LandingPage extends Component {
 
     async componentDidMount() {
         const res = await axios.get('http://localhost:4567/users');
-
+        
         this.setState({
             users: res.data
         });

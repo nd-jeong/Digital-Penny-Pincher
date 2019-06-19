@@ -25,7 +25,6 @@ const User = db.define("user", {
         allowNull: true,
         unique: true
     },
-    balance: sequelize.INTEGER,
     limit: sequelize.INTEGER
 });
 
@@ -42,9 +41,9 @@ const User = db.define("user", {
 
 const Transaction = db.define("transaction", {
     amount: sequelize.DECIMAL(5,2),
-    date: sequelize.DATEONLY,
-    time: sequelize.TIME,
-    type: sequelize.STRING
+    type: sequelize.STRING,
+    date: sequelize.STRING,
+    time: sequelize.STRING
 });
 
 // User.hasMany(CreditCard);
