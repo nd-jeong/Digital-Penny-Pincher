@@ -19,7 +19,7 @@ class ProfileSettings extends Component {
     async componentDidMount() {
         const response = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`)
         console.log(response)
-        const currentUser = response.data.currentUser
+        const currentUser = response.data
         this.setState({
             userToUpdate: currentUser
         })

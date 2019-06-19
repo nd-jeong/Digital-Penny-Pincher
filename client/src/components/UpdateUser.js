@@ -13,13 +13,13 @@ class UpdateUser extends Component {
       redirect: false
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   // When page loads fetch the current data and save/set it to the state:
   async componentDidMount() {
-    const response = await axios.get(`/users/${this.props.match.params.id}`)
+    const response = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`)
     console.log(response);
-    const updateUser = response.data.updateUser
+    const updateUser = response.data
     this.setState({
       limit: updateUser.limit,
       name: updateUser.name,
@@ -38,14 +38,14 @@ class UpdateUser extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    await axios.put(
-      `http://localhost:4567/users/${this.props.match.params.id}`, {
+    const response = await axios.put(`http://localhost:4567/users/${this.props.match.params.id}`, {
         limit: this.state.limit,
         name: this.state.name,
         email: this.state.email,
         phoneNumber: this.state.phoneNumber
-      }
-    );
+      });
+      console.log(response)
+
     this.setState({
       redirect: true
     });
@@ -54,7 +54,7 @@ class UpdateUser extends Component {
   render() {
     return (
       <div>
-        {this.state.redirect ? <Redirect to={`http://localhost:4567/profile/${this.props.match.params.id}`} />: null}
+        {this.state.redirect ? <Redirect to={`/dashboard/${this.props.match.params.id}/profile`} />: null}
         <form onChange={this.handleChange} onSubmit={this.handleSubmit} >
 
             <input
@@ -77,7 +77,7 @@ class UpdateUser extends Component {
             />
             <input
               name="phoneNumber"
-              type="number"
+              type="text"
               placeholder="Input phone number here!"
               value={this.state.phoneNumber}
             />
