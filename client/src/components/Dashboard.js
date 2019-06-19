@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import KeypadButtons from "./KeypadButtons";
 import NavDashboard from "./NavDashboard";
 import axios from 'axios';
-import MyTransactions from './MyTransactions';
 
 class Dashboard extends Component {
     constructor(props) {
