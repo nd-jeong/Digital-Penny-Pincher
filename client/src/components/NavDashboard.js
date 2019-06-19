@@ -6,9 +6,9 @@ class NavDashboard extends Component {
     return (
       <div className="dashboard-nav-container">
         <div>Icon here?</div>
-        <Link to={"/dashboard/profile"}> Profile Settings </Link>
-        <Link to={"/dashboard/budget"}>My Budget Activity</Link>
-        <Link to={"/dashboard/creditcards"}>Credit and Debit Cards</Link>
+        <Link to={`/dashboard/${this.props.userid}/profile`}> Profile Settings </Link>
+        <Link to={`/dashboard/${this.props.userid}/budget`}>My Budget Activity</Link>
+        <Link to={`/dashboard/${this.props.userid}/transactions`}>My Transactions</Link>
         {/* The "sign out" link redirects to LandingPage (temporary placeholder until we incorporate auth) */}
         <Link to={"/"}>Sign out</Link>
       </div>
