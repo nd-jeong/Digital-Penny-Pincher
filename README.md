@@ -10,7 +10,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Project Proposal / Project Start | Incomplete
+|Day 1| Project Proposal / Project Start | Complete
 |Day 2| Database / React Components | Incomplete
 |Day 3| Database / React Components | Incomplete
 |Day 4| Initial Clickable Model | Incomplete
@@ -82,7 +82,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
 | Adding Forms | H | 5hrs| 0 |
-| Create and Seed Database | H | 6hrs| 0 |
+| Create and Seed Database | H | 6hrs| 4 |
 | Create Nav Component | H | 3hrs| 0 |
 | Create Header/Footer Component | H | 3hrs| 0 |
 | Create Landing Page Component | H | 4hrs| 0 |
@@ -124,7 +124,7 @@ function reverse(string) {
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+We decided to remove the credit cards component and table. Instead we will add a transaction component.
 
 #### SAMPLE.....
 | Original Plan | Outcome | 

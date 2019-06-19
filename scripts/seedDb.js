@@ -19,7 +19,6 @@ const main = async () => {
         name: "Andy Jeong",
         email: "andyj@fakemail.com",
         phoneNumber: "000-000-0000",
-        balance: 0,
         limit: 1000
     });
 
@@ -27,7 +26,6 @@ const main = async () => {
         name: "Candice Agard",
         email: "candice@fakemail.com",
         phoneNumber: "111-111-1111",
-        balance: 100,
         limit: 10000
     });
 
@@ -35,7 +33,6 @@ const main = async () => {
         name: "Ted Schwartz",
         email: "tedschwartz@fakemail.com",
         phoneNumber: "222-222-2222",
-        balance: 192,
         limit: 19000
     });
 
@@ -73,93 +70,93 @@ const main = async () => {
 
     const andyTransactionOne = await Transaction.create({
         amount: 2.99,
+        type: "personal",
         date: "2019-06-02",
-        time: "12:00",
-        type: "checking" 
+        time: "12:00"
     });
 
     const andyTransactionTwo = await Transaction.create({
         amount: 5.99,
+        type: "personal",
         date: "2019-06-06",
-        time: "15:014",
-        type: "checking" 
+        time: "15:014"
     });
 
     const andyTransactionThree = await Transaction.create({
         amount: 10.99,
+        type: "personal", 
         date: "2019-06-15",
-        time: "09:00",
-        type: "checking" 
+        time: "09:00"
     });
 
     const andyTransactionFour = await Transaction.create({
         amount: 17.89,
         date: "2019-06-16",
         time: "17:00",
-        type: "checking" 
+        type: "personal" 
     });
 
     const candiceTransactionOne = await Transaction.create({
         amount: 4.99,
+        type: "personal",
         date: "2019-06-01",
-        time: "11:00",
-        type: "checking" 
+        time: "11:00"
     });
 
     const candiceTransactionTwo = await Transaction.create({
         amount: 3.99,
+        type: "personal",
         date: "2019-06-08",
         time: "10:45",
-        type: "checking" 
     });
 
     const candiceTransactionThree = await Transaction.create({
         amount: 8.99,
+        type: "personal",
         date: "2019-06-12",
-        time: "15:30",
-        type: "checking" 
+        time: "15:30"
     });
 
     const tedTransactionOne = await Transaction.create({
         amount: 12.99,
+        type: "personal",
         date: "2019-06-03",
-        time: "10:05",
-        type: "checking" 
+        time: "10:05"
     });
 
     const tedTransactionTwo = await Transaction.create({
         amount: 6.84,
+        type: "personal",
         date: "2019-06-04",
-        time: "16:25",
-        type: "checking" 
+        time: "16:25"
     });
 
     const tedTransactionThree = await Transaction.create({
         amount: 25.99,
+        type: "business",
         date: "2019-06-08",
-        time: "15:48",
-        type: "business" 
+        time: "15:48"
     });
 
     const tedTransactionFour = await Transaction.create({
         amount: 13.65,
+        type: "personal",
         date: "2019-06-10",
-        time: "12:05",
-        type: "checking" 
+        time: "12:05"
     });
 
     const tedTransactionFive = await Transaction.create({
         amount: 36.37,
+        type: "business",
         date: "2019-06-12",
-        time: "12:45",
-        type: "business" 
+        time: "12:45" 
     });
 
     const tedTransactionSix = await Transaction.create({
         amount: 12.99,
+        type: "personal", 
         date: "2019-06-15",
-        time: "16:38",
-        type: "checking" 
+        time: "16:38"
     });
 
     // await creditCardOne.setUser(andy);
