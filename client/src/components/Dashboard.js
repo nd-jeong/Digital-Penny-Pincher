@@ -112,6 +112,8 @@ class Dashboard extends Component {
         let user = this.state.user;
 
         return (
+
+
             <div className="dashboard-container">
 
                 <div className="dashboard-nav">

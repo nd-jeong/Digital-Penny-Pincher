@@ -26,8 +26,25 @@ class LandingPage extends Component {
       });
     return (
       <div className="landing-container">
+
+          <h2 style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>Digital Penny Pincher</h2>
         <Link to="/dashboard"> Dashboard </Link>
         {users}
+
+  <ul class="bubbles">
+
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+
+          </ul>
       </div>
     );
   }

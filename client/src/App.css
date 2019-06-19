@@ -43,7 +43,8 @@
   position: relative;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   /* font-size: 80px; */
-  font-size: 4em;
+
+  font-size: 2em;
   text-align: center;
   background-color: #85daef;
 
@@ -69,9 +70,8 @@
   display: flex;
   margin: auto;
   flex-direction: column;
-  padding: 10px;
-  
+  position: center;
+  line-height: 1;
 
-  
   
 }
