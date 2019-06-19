@@ -12,6 +12,17 @@ transactionRouter.get('/:userid', async (req, res) => {
     res.json(allTransactions);
 });
 
+transactionRouter.get('/:userid/:transactiontype', async (req, res) => {
+    const allTransactionsType = await Transaction.findAll({
+        where: {
+            user_id: req.params.userid,
+            type: req.params.transactiontype
+        }
+    });
+
+    res.json(allTransactionsType)
+})
+
 transactionRouter.post('/:userid/create', async (req, res) => {
     const newTransaction = await Transaction.create(req.body);
 
