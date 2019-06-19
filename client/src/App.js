@@ -16,10 +16,6 @@ render() {
       <div className="App-container">
         <Switch>
           <Route exact path="/" component={LandingPage} />
-
-         
-
-
           <Route exact path="/nav_dashboard" component={NavDashboard} />
           {/* <Route exact path="/createuser" component={CreateUser} /> */}
           <Route exact path="/dashboard/:id" component={Dashboard} />
@@ -32,10 +28,6 @@ render() {
           <Route exact path="/dashboard/:id/transactions" component={MyTransactions} />
 
           {/* <Route exact path="/dashboard/creditcards/edit" component={UpdateCreditCard} /> */}
-
-   
-
-
         </Switch>
       </div>
     )
