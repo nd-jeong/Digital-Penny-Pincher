@@ -151,6 +151,7 @@ class Dashboard extends Component {
                             update={this.updateReadout}
                         />
                     ))}
+                </div>
                     <div className="transaction-type-container">
                         <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
                         <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
@@ -158,7 +159,7 @@ class Dashboard extends Component {
                         <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
                     </div>
                 </div>
-            </div>
+            
         );
     }
 }

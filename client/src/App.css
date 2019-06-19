@@ -6,11 +6,16 @@
   overflow-y: hidden;
 } */
 
+.dashboard-nav {
+  background-color: #84ecaf;
+
+}
+
 .dashboard-nav-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  align-content: space-between;
+  align-content: space-between;  
 }
 
 .dashboard-container {
@@ -37,8 +42,10 @@
   position: relative;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   /* font-size: 80px; */
+
   font-size: 2em;
   text-align: center;
+  background-color: #85daef;
 
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -61,8 +68,10 @@
 .transaction-type-container {
   display: flex;
   margin: auto;
+  flex-direction: column;
   position: center;
   line-height: 1;
+
   
 }
 
