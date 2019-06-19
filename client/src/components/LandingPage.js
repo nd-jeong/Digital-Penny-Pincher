@@ -26,7 +26,7 @@ class LandingPage extends Component {
     return (
       <div className="landing-container">
 
-          <h2 style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>Digital Penny Pincher</h2>
+          <h2 style={{ padding: "10px 20px", textAlign: "center", color: "lightgreen"}}>Digital Penny Pincher</h2>
         <Link to="/dashboard"> Dashboard </Link>
         {users}
 
@@ -44,6 +44,7 @@ class LandingPage extends Component {
           <li></li>
 
           </ul>
+
       </div>
     );
   }
