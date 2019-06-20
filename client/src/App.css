@@ -8,6 +8,7 @@
 
 .budget-container {
   color: white;
+  height: 100%;
 }
 
 .dashboard-nav {
@@ -144,3 +145,44 @@ h2 {
 
 
 
+/* Pie-Chart */
+
+.legend-personal {
+    height: 15px;
+    width: 15px; 
+    background: yellow;
+    margin: 5px;
+}
+
+.legend-business {
+    height: 15px;
+    width: 15px; 
+    background: blue;
+    margin: 5px;
+}
+
+.legend-charity {
+    height: 15px;
+    width: 15px; 
+    background: red;
+    margin: 5px;
+}
+
+.legend-other {
+    height: 15px;
+    width: 15px; 
+    background: green;
+    margin: 5px;
+}
+
+.legend-budget {
+    height: 15px;
+    width: 15px; 
+    background: orange;
+    margin: 5px;
+}
+
+.piechart-legend {
+    display: flex;
+    justify-content: center;
+}
