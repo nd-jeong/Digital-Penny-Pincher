@@ -15,6 +15,7 @@
     background: #b0eeba;
     left: -200px;
     transition: all 500ms linear;
+    z-index: 3;
 }
 
 #sidebar.active {

@@ -1,10 +1,6 @@
 .App-container {
   text-align: center;
 }
-/* body {
-  overflow-x: hidden;
-  overflow-y: hidden;
-} */
 
 .budget-container {
   color: white;
@@ -114,8 +110,94 @@
   flex-direction: column;
   position: center;
   line-height: 1;
+}
 
-  
+ a {
+    position: relative;
+    display: block;
+    padding: 30px 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #b0eeba;
+    font-size: 12px;
+    letter-spacing: 2px;
+    overflow: hidden;
+     margin: 30px;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0%;
+    left: -100%;
+    background: linear-gradient(to right, lightgreen, purple);
+    transition: 0.3s ease-in-out;
+    transition-delay: 0.4s;
+}
+
+a:hover::before {
+    left: 100%;
+}
+
+a span:nth-child(odd) {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,lightgreen, purple );
+    transition: 0.5s, ease-in-out;
+}
+
+a span:nth-child(1) {
+    top: 0%;
+    left: 50%;
+}
+
+a span:nth-child(3) {
+    bottom: 0%;
+    right: 50%;
+}
+
+a span:nth-child(even) {
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to right,lightgreen, purple );
+    transition: 0.5s, ease-in-out;
+}
+
+a span:nth-child(2) {
+    top: 50%;
+    left: 0%;
+}
+
+a span:nth-child(4) {
+    bottom: 50%;
+    right: 0%;
+}
+
+a:hover span:nth-child(1) {
+    top: 0%;
+    left: -50%;
+}
+
+a:hover span:nth-child(3) {
+    bottom: 0%;
+    right: -50%;
+}
+
+a:hover span:nth-child(2) {
+    top: -50%;
+    left: 0%;
+}
+
+a:hover span:nth-child(4) {
+    bottom: -50%;
+    right: 0%;
+
 }
 
 .transaction-div {
