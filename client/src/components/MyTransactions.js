@@ -46,9 +46,8 @@ class MyTransactions extends Component {
         } else {
             this.setState({
                 filter: false
-            })
+            });
         }
-        
     }
 
     render() {
@@ -56,7 +55,7 @@ class MyTransactions extends Component {
         const transactions = transactionArray.map(transaction => {
             return(
                 <div key={transaction.id} className="transaction-div">
-                    <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`}>
+                    <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`} style={{ textDecoration: 'none' }}>
                         <p>Date: {transaction.date}</p>
                         <p>Time: {transaction.time}</p>
                         <p>Amount: {transaction.amount}</p>
@@ -70,7 +69,7 @@ class MyTransactions extends Component {
         const filteredTransactions = filteredTransactionArray.map(transaction => {
             return(
                 <div key={transaction.id} className="transaction-div">
-                    <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`}>
+                    <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`} style={{ textDecoration: 'none' }}>
                         <p>Date: {transaction.date}</p>
                         <p>Time: {transaction.time}</p>
                         <p>Amount: {transaction.amount}</p>
@@ -78,7 +77,7 @@ class MyTransactions extends Component {
                     </Link>
                 </div>
             )
-        })
+        });
 
         return(
             <div className="transactions-wrapper">
