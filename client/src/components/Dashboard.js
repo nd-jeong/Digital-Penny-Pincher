@@ -186,29 +186,33 @@ class Dashboard extends Component {
                 {/*    ))}*/}
                 {/*</div>*/}
                     <div className="transaction-type-container">
-                        {<button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>}
-                        {<button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>}
-                        {<button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>}
-                        {<button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>}
-                        <a href="#"> personal
+                        {/*<a> p<button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button></a>*/}
+                        {/*{<button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>}*/}
+                        {/*{<button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>}*/}
+                        {/*{<button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>}*/}
+                        <a href="#">
+                            <button className="personal" value='personal' onClick={this.setTransactionInfo}>personal</button>
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
                         </a>
-                            <a href="#"> Charity
+                            <a href="#">
+                                <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
                           <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
                         </a>
-                        <a href="#"> Business
+                        <a href="#">
+                            <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
                         </a>
-                        <a href="#"> other
+                        <a href="#">
+                            <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
                             <span></span>
                             <span></span>
                             <span></span>
