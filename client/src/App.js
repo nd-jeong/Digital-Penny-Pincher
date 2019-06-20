@@ -9,6 +9,8 @@ import BudgetTracker from "./components/BudgetTracker";
 import MyTransactions from "./components/MyTransactions";
 import UpdateUser from "./components/UpdateUser";
 import UpdateTransaction from "./components/UpdateTransaction";
+import CreateUser from "./components/CreateUser";
+import UserSignIn from "./components/UserSignIn";
 
 
 class App extends Component {
@@ -18,7 +20,8 @@ render() {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/nav_dashboard" component={NavDashboard} />
-          {/* <Route exact path="/createuser" component={CreateUser} /> */}
+          <Route exact path="/createuser" component={CreateUser} />
+          <Route exact path="/signin" component={UserSignIn}/>
           <Route exact path="/dashboard/:id" component={Dashboard} />
           <Route exact path="/dashboard/:id/profile" component={ProfileSettings} />
           <Route exact path="/dashboard/:id/profile/edit" component={UpdateUser} />

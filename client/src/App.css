@@ -8,7 +8,13 @@
 
 .dashboard-nav {
   background-color: #84ecaf;
+}
 
+.create-user-form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 auto;
 }
 
 .dashboard-nav-container {
