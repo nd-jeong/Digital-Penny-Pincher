@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import ReactMinimalPieChart from 'react-minimal-pie-chart';
 
 class BudgetTracker extends Component {
     constructor(props) {
@@ -9,24 +10,36 @@ class BudgetTracker extends Component {
             user: {},
             transaction: [],
             currentBalance: 0,
-            dailyBudget: 0
+            dailyBudget: 0,
+            personalTransactions: [],
+            businessTransactions: [],
+            chartiyTransactions: [],
+            otherTransactions: [],
+            personalTotal: 0,
+            businessTotal: 0,
+            charityTotal: 0,
+            otherTotal: 0
         }
+
         this.totalTransactions = this.totalTransactions.bind(this);
+        this.sortTransactions = this.sortTransactions.bind(this);
+        this.addTransactionAmounts = this.addTransactionAmounts.bind(this);
     }
 
     async componentDidMount() {
         const userInfo = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
-        const user = userInfo.data        
+        const user = userInfo.data
 
         const transactionList = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
-        const transaction = transactionList.data
-        console.log(transaction)
+        const transaction = transactionList.data;
 
         this.setState({
             user,
             transaction
         });
-        this.totalTransactions()
+        this.totalTransactions();
+        this.sortTransactions();
+        this.addTransactionAmounts();
     }
 
     totalTransactions() {
@@ -46,26 +59,121 @@ class BudgetTracker extends Component {
         this.setState({
             currentBalance: roundedCurrentBalance
         });
-        
+
     }
 
-    
+    sortTransactions() {
+        const personalArray = [];
+        const businessArray = [];
+        const charityArray = [];
+        const otherArray = [];
 
+        this.state.transaction.map(transaction => {
+            if (transaction.type === 'personal') {
+                personalArray.push(transaction);
+            } else if (transaction.type === 'business') {
+                businessArray.push(transaction);
+            } else if (transaction.type === 'charity') {
+                charityArray.push(transaction);
+            } else {
+                otherArray.push(transaction)
+            }
+        });
+
+        this.setState({
+            personalTransactions: personalArray,
+            businessTransactions: businessArray,
+            chartiyTransactions: charityArray,
+            otherTransactions: otherArray
+        });
+    }
+
+    addTransactionAmounts() {
+        let personalTotal = 0;
+        let businessTotal = 0;
+        let charityTotal = 0;
+        let otherTotal = 0;
+
+        this.state.personalTransactions.map(transaction => {
+            const amount = parseFloat(transaction.amount);
+            personalTotal = amount + personalTotal;
+        });
+        console.log(personalTotal);
+
+        this.state.businessTransactions.map(transaction => {
+            const amount = parseFloat(transaction.amount);
+            businessTotal = amount + businessTotal;
+        });
+
+        this.state.chartiyTransactions.map(transaction => {
+            const amount = parseFloat(transaction.amount);
+            charityTotal = amount + charityTotal;
+        });
+
+        this.state.otherTransactions.map(transaction => {
+            const amount = parseFloat(transaction.amount);
+            otherTotal = amount + otherTotal;
+        });
+
+        this.setState({
+            personalTotal,
+            businessTotal,
+            charityTotal,
+            otherTotal
+        });
+    }
 
     render() {
 
         let user = this.state.user;
+        const remainingBudget = user.limit - this.state.currentBalance;
 
-        return(
-        
-            <div className="budget-container"> 
+        const data = [
+            { title: "Personal", value: this.state.personalTotal, color: 'yellow' },
+            { title: "Business", value: this.state.businessTotal, color: 'blue' },
+            { title: "Charitable Donation", value: this.state.charityTotal, color: 'red' },
+            { title: "Other", value: this.state.otherTotal, color: 'green' },
+            {title: "Remaining Budget", value: remainingBudget, color: 'orange'}
+        ];
+
+        return (
+
+            <div className="budget-container">
                 <h2>Budget Tracker Activity (container)</h2>
                 <div>Current Month Balance: ${this.state.currentBalance} </div>
-                <div>Remaining Monthly Budget: ${user.limit - this.state.currentBalance} </div>
+                <div>Remaining Monthly Budget: ${remainingBudget} </div>
                 <div>Monthly Limit: ${user.limit} </div>
                 <br></br>
                 <div>(Set SMS budget alerts in this component)</div>
-                <div>(Include spending category totals here or in transactions)</div>
+                <div className='piechart-legend'>
+                    <div className='legend-personal'></div>
+                    <p>Personal</p>
+                    <div className='legend-business'></div>
+                    <p>Business</p>
+                    <div className='legend-charity'></div>
+                    <p>Charitable Donation</p>
+                    <div className='legend-other'></div>
+                    <p>Other</p>
+                    <div className='legend-budget'></div>
+                    <p>Remaining Budget</p>
+                </div>
+                <div>
+                    <ReactMinimalPieChart
+                        data={data}
+                        style={{ height: '350px' }}
+                        label
+                        labelStyle={{
+                            fontSize: '6px',
+                            fontFamily: 'sans-serif'
+                        }}
+                        radius={42}
+                        labelPosition={112}
+                        animate
+                        lineWidth={20}
+                        paddingAngle={5}
+                        lengthAngle={-360}
+                    />
+                </div>
             </div>
         )
     }
