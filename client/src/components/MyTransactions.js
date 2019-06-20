@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class MyTransactions extends Component {
     constructor() {
@@ -38,7 +38,7 @@ class MyTransactions extends Component {
 
     async transactionTypeFilter(event) {
         const transactionType = event.target.value;
-        
+
         if (transactionType) {
             this.setState({
                 transactionType
@@ -53,13 +53,21 @@ class MyTransactions extends Component {
     render() {
         const transactionArray = this.state.transactionArray;
         const transactions = transactionArray.map(transaction => {
-            return(
+            return (
                 <div key={transaction.id} className="transaction-div">
                     <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`} style={{ textDecoration: 'none' }}>
-                        <p>Date: {transaction.date}</p>
-                        <p>Time: {transaction.time}</p>
-                        <p>Amount: {transaction.amount}</p>
-                        <p>Type: {transaction.type}</p>
+                        <div>
+                            <p>Date: {transaction.date}</p>
+                        </div>
+                        <div>
+                            <p>Time: {transaction.time}</p>
+                        </div>
+                        <div>
+                            <p>Amount: {transaction.amount}</p>
+                        </div>
+                        <div>
+                            <p>Type: {transaction.type}</p>
+                        </div>
                     </Link>
                 </div>
             )
@@ -67,33 +75,41 @@ class MyTransactions extends Component {
 
         const filteredTransactionArray = this.state.filteredTransactionArray;
         const filteredTransactions = filteredTransactionArray.map(transaction => {
-            return(
+            return (
                 <div key={transaction.id} className="transaction-div">
                     <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`} style={{ textDecoration: 'none' }}>
-                        <p>Date: {transaction.date}</p>
-                        <p>Time: {transaction.time}</p>
-                        <p>Amount: {transaction.amount}</p>
-                        <p>Type: {transaction.type}</p>
+                        <div>
+                            <p>Date: {transaction.date}</p>
+                        </div>
+                        <div>
+                            <p>Time: {transaction.time}</p>
+                        </div>
+                        <div>
+                            <p>Amount: {transaction.amount}</p>
+                        </div>
+                        <div>
+                            <p>Type: {transaction.type}</p>
+                        </div>
                     </Link>
                 </div>
             )
         });
 
-        return(
+        return (
             <div className="transactions-wrapper">
                 <h2>My Transactions</h2>
                 <div>
-                    <button value="" onClick={this.transactionTypeFilter}>All</button>
-                    <button value="personal" onClick={this.transactionTypeFilter}>Personal</button>
-                    <button value="business" onClick={this.transactionTypeFilter}>Business</button>
-                    <button value="charity" onClick={this.transactionTypeFilter}>Charitable Donations</button>
-                    <button value="other" onClick={this.transactionTypeFilter}>Other</button>
+                    <button value="" onClick={this.transactionTypeFilter} className='transaction-type-button'>All</button>
+                    <button value="personal" onClick={this.transactionTypeFilter} className='transaction-type-button'>Personal</button>
+                    <button value="business" onClick={this.transactionTypeFilter} className='transaction-type-button'>Business</button>
+                    <button value="charity" onClick={this.transactionTypeFilter} className='transaction-type-button'>Charity</button>
+                    <button value="other" onClick={this.transactionTypeFilter} className='transaction-type-button'>Other</button>
                 </div>
                 <div className="transactions-container">
                     {this.state.filter ? filteredTransactions : transactions}
                 </div>
             </div>
-            
+
         )
     }
 }

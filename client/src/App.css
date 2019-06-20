@@ -29,14 +29,21 @@
 .create-user-label {
     color: #84ecaf;
     font-weight: 700;
+    margin: 10px 0;
 }
 
 .create-user-submit {
     margin-top: 50px;
+    color: lightgreen;
+    border: 1px solid lightgreen;
+    background: #3D1978;
+    transition-duration: 0.5s;
 }
 
 .create-user-submit:hover {
-    border: 1px solid white;
+    border: 1px solid #3D1978;
+    color: #3D1978;
+    background: lightgreen;
 }
 
 .dashboard-nav-container {
@@ -46,14 +53,18 @@
   align-content: space-between;  
 }
 
-/*.dashboard-container {*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  top: 0;*/
-/*  left: 0;*/
-/*  right: 0;*/
-/*  bottom: 0;*/
-/*}*/
+
+
+.dashboard-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+}
+
 
 
 
@@ -80,7 +91,10 @@
 /* .keypad-buttons {
   font-size: 
 } */
-
+.dashboard-info {
+    display: flex;
+    flex-direction: row;
+}
 
 /*.dashboard-summary {*/
 /*    text-align: left;*/
@@ -120,11 +134,15 @@
 }
 
 .dashboard-summary {
-    display: inline;
+
+    display: flex;
+    flex-direction: column;
     text-align: left;
     font-size: 20px;
     margin: auto;
-    width: 30px;
+    width: 50%;
+    align-items: center;
+    background: lightgreen;
 }
 
 .keypad-num-container {
@@ -190,12 +208,7 @@
 }
 
 
-div a personal {
-border: 1px solid lightgreen;
-}
-
-
- a {
+a {
     position: relative;
     display: block;
     padding: 30px 50px;
@@ -300,19 +313,81 @@ a:hover span:nth-child(4) {
 }
 
 .transaction-div {
-    padding: 25px;
     text-align: left;
+    display: flex;
+    height: 225px;
+    border: 1px solid lightgreen;
+    margin: 5px;
+}
+
+.transaction-div:hover {
+    border: 1px solid white;
+    color: white;
 }
 
 .transactions-container {
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 25px;
 }
 
 .transactions-wrapper {
     height: 1000px;
     overflow: auto;
+}
 
+.transactions-wrapper h2 {
+    color: white;
+}
+
+.transaction-info-div {
+    color: lightgreen;
+    margin: 0 auto;
+    border: 2px solid lightgreen;
+    width: 20%;
+    padding: 25px;
+    margin-bottom: 70px;
+}
+
+.transaction-info-div h5 {
+    color: white;
+}
+
+.transaction-type-button {
+    margin: 0 10px;
+    width: 100px;
+    color: lightgreen;
+    background: #3D1978;
+    border: 2px solid lightgreen;
+}
+
+.transaction-type-button:hover {
+    color: #3D1978;
+    background: lightgreen;
+    border: 2px solid #3D1978;
+}
+
+.transaction-type-button:focus {
+    outline: none;
+}
+
+.transaction-update-form {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 20%;
+    padding: 50px;
+    border: 2px solid lightgreen;
+}
+
+.transaction-update-form input {
+    margin: 10px;
+}
+
+.transaction-update-form label {
+    color: lightgreen;
 }
 
 
