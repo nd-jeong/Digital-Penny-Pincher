@@ -113,18 +113,12 @@ class Dashboard extends Component {
             }
             
             const balance = amountArray.reduce(reducer);
-            
+            const roundedBalance = Math.floor(balance * 100) / 100;
+        
             this.setState({
-                balance
+                balance: roundedBalance
             });
         }
-        
-        const balance = amountArray.reduce(reducer);
-        const roundedBalance = Math.floor(balance * 100) / 100;
-        
-        this.setState({
-            balance: roundedBalance
-        });
     }
 
     render() {
@@ -143,14 +137,18 @@ class Dashboard extends Component {
                 {/*        userid={this.state.user.id}*/}
                 {/*    />*/}
                 {/*</div>*/}
-
-                <div className="keypad-container">
-                    <div className="dashboard-summary">
-                        <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
-                        <br></br>
-                        <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
-                        <p>Daily Budget: (formula: available budget/days left in month)</p>
+                <div className="dashboard-summary">
+                    <div className='dashboard-info'>
+                    <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
                     </div>
+                    <div className='dashboard-info'>
+                    <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
+                    </div>
+                        
+                        
+                </div>
+                <div className="keypad-container">
+                    
 
                     {/* <div className="dashboard-daily-budget"> Daily Budget: (formula: available budget/days left in month) </div> */}
 
@@ -186,12 +184,15 @@ class Dashboard extends Component {
                 {/*    ))}*/}
                 {/*</div>*/}
                     <div className="transaction-type-container">
-                        {/*<a> p<button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button></a>*/}
-                        {/*{<button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>}*/}
-                        {/*{<button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>}*/}
-                        {/*{<button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>}*/}
-                        <a href="#">
+
                             <button className="personal" value='personal' onClick={this.setTransactionInfo}>personal</button>
+
+                        <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
+                        <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
+                        <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
+                        <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
+                        
+
                             <span></span>
                             <span></span>
                             <span></span>
@@ -217,7 +218,7 @@ class Dashboard extends Component {
                             <span></span>
                             <span></span>
                             <span></span>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             

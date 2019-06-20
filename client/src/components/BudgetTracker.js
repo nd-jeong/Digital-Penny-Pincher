@@ -70,13 +70,13 @@ class BudgetTracker extends Component {
 
         this.state.transaction.map(transaction => {
             if (transaction.type === 'personal') {
-                personalArray.push(transaction);
+                return personalArray.push(transaction);
             } else if (transaction.type === 'business') {
-                businessArray.push(transaction);
+                return businessArray.push(transaction);
             } else if (transaction.type === 'charity') {
-                charityArray.push(transaction);
+                return charityArray.push(transaction);
             } else {
-                otherArray.push(transaction)
+                return otherArray.push(transaction)
             }
         });
 
@@ -96,23 +96,23 @@ class BudgetTracker extends Component {
 
         this.state.personalTransactions.map(transaction => {
             const amount = parseFloat(transaction.amount);
-            personalTotal = amount + personalTotal;
+            return personalTotal = amount + personalTotal;
         });
         console.log(personalTotal);
 
         this.state.businessTransactions.map(transaction => {
             const amount = parseFloat(transaction.amount);
-            businessTotal = amount + businessTotal;
+            return businessTotal = amount + businessTotal;
         });
 
         this.state.chartiyTransactions.map(transaction => {
             const amount = parseFloat(transaction.amount);
-            charityTotal = amount + charityTotal;
+            return charityTotal = amount + charityTotal;
         });
 
         this.state.otherTransactions.map(transaction => {
             const amount = parseFloat(transaction.amount);
-            otherTotal = amount + otherTotal;
+            return otherTotal = amount + otherTotal;
         });
 
         this.setState({
@@ -139,12 +139,12 @@ class BudgetTracker extends Component {
         return (
 
             <div className="budget-container">
-                <h2>Budget Tracker Activity (container)</h2>
+                <h2>Budget Tracker Activity</h2>
                 <div>Current Month Balance: ${this.state.currentBalance} </div>
                 <div>Remaining Monthly Budget: ${remainingBudget} </div>
                 <div>Monthly Limit: ${user.limit} </div>
                 <br></br>
-                <div>(Set SMS budget alerts in this component)</div>
+                
                 <div className='piechart-legend'>
                     <div className='legend-personal'></div>
                     <p>Personal</p>
@@ -172,6 +172,7 @@ class BudgetTracker extends Component {
                         lineWidth={20}
                         paddingAngle={5}
                         lengthAngle={-360}
+                        animationDuration={1500}
                     />
                 </div>
             </div>

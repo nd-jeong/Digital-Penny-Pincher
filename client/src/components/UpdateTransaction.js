@@ -61,14 +61,15 @@ class UpdateTransaction extends Component {
         return(
             <div>
                 {this.state.redirect ? <Redirect to={`/dashboard/${this.props.match.params.id}/transactions`}/> : null}
-                <div>
-                    <p>{transaction.date}</p>
-                    <p>{transaction.time}</p>
-                    <p>{transaction.amount}</p>
-                    <p>{transaction.type}</p>
+                <div className="transaction-info-div">
+                    <p><h5>Date:</h5> {transaction.date}</p>
+                    <p><h5>Time:</h5> {transaction.time}</p>
+                    <p><h5>Current Amount:</h5> ${transaction.amount}</p>
+                    <p><h5>Current Type:</h5> {transaction.type}</p>
                 </div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="number" placeholder='Enter new amount' onChange={this.handleChange} name='newAmount' value={this.state.newAmount}></input>
+                <form onSubmit={this.handleSubmit} className='transaction-update-form'>
+                    <label>Enter new transaction amount:</label>
+                    <input type="number" onChange={this.handleChange} name='newAmount' value={this.state.newAmount}></input>
                     <select onChange={this.handleChange} name='newType' value={this.state.newType}>
                         <option value=''>Select new type</option>
                         <option value='personal'>Personal</option>
@@ -77,8 +78,8 @@ class UpdateTransaction extends Component {
                         <option value='other'>Other</option>
                     </select>
                     <input type='submit'></input>
+                    <button onClick={this.deleteTransaction}>Delete Transaction</button>
                 </form>
-                <button onClick={this.deleteTransaction}>Delete</button>
             </div>
         )
     }
