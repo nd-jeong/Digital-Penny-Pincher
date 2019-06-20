@@ -57,14 +57,16 @@ class BudgetTracker extends Component {
         let user = this.state.user;
 
         return(
-        <div>
-            <div className="budget-container"> <h2>Budget Tracker Activity (container)</h2> </div>
-            <div>Current Month Balance: ${this.state.currentBalance} </div>
-            <div>Remaining Monthly Budget: ${user.limit - this.state.currentBalance} </div>
-            <div>Monthly Limit: ${user.limit} </div>
-            <br></br>
-            <div>(Include spending category totals here?)</div>
-        </div>
+        
+            <div className="budget-container"> 
+                <h2>Budget Tracker Activity (container)</h2>
+                <div>Current Month Balance: ${this.state.currentBalance} </div>
+                <div>Remaining Monthly Budget: ${user.limit - this.state.currentBalance} </div>
+                <div>Monthly Limit: ${user.limit} </div>
+                <br></br>
+                <div>(Set SMS budget alerts in this component)</div>
+                <div>(Include spending category totals here or in transactions)</div>
+            </div>
         )
     }
 }
