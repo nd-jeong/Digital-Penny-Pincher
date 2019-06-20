@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline|Gothic+A1&display=swap');
+
 .App-container {
   text-align: center;
 }
@@ -18,7 +20,7 @@
 }
 
 .create-user-label {
-    color: #90EE90;
+    color: #84ecaf;
     font-weight: 700;
 }
 
@@ -46,25 +48,21 @@
   bottom: 0;
 }
 
-.dashboard-summary {
-  text-align: left;
-  font-size: 20px;
-  margin: auto;
-
-}
 
 
 .keypad-container {
   margin: auto;
-  padding: 10px;
+  padding: 30px;
   white-space: nowrap;
   position: relative;
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-family: 'Bungee Hairline', cursive;
   /* font-size: 80px; */
 
   font-size: 2em;
+    font-color: white;
   text-align: center;
-  background-color: #85daef;
+  background-color: #84ecaf;
+  opacity: 0.4;
 
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -76,20 +74,34 @@
   font-size: 
 } */
 
+
+.dashboard-summary {
+    text-align: left;
+    font-size: 20px;
+    margin: auto;
+    width: 50px;
+}
+
+/*.dashboard-summary p {*/
+/*    display: block;*/
+/*    width: 50px;*/
+/*}*/
+
 .landing-button {
-    border: 1px solid #90EE90;
-    padding: 20px;
+    border: 1px solid #84ecaf;
+    padding: 10px;
     text-decoration: none;
-    color: #90EE90;
-    margin: 5px;
+    color: #84ecaf;
+    margin: 0 auto;
     transition-duration: 0.6s;
     font-weight: 700;
+    width: 20%;
 }
 
 .landing-button:hover {
     color: #3D1978;
     border: 1px solid #3D1978;
-    background: #90EE90;
+    background: rgb(144,237,143, 0.5);
 }
 
 .landing-button-container {
@@ -133,12 +145,28 @@ a::before {
     top: 0%;
     left: -100%;
     background: linear-gradient(to right, lightgreen, purple);
-    transition: 0.3s ease-in-out;
-    transition-delay: 0.4s;
+    transition: 0.6s ease-in-out;
+    transition-delay: 0.6s;
 }
 
 a:hover::before {
     left: 100%;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    right: -100%;
+    background: linear-gradient(to right, lightgreen, purple);
+    transition: 0.6s ease-in-out;
+    transition-delay: 0.6s;
+}
+
+a:hover::after {
+    right: 100%;
 }
 
 a span:nth-child(odd) {

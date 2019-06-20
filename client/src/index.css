@@ -12,7 +12,8 @@
     position: fixed;
     width: 200px;
     height: 100%;
-    background: #b0eeba;
+    background: #84ecaf;
+    opacity: 0.8;
     left: -200px;
     transition: all 500ms linear;
     z-index: 3;
@@ -27,6 +28,7 @@
     list-style: none;
     padding: 15px 10px;
     border-bottom: 1px solid;
+    margin-left: -230px;
 }
 
 #sidebar .toggle-btn {
