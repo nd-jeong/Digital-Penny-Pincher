@@ -137,19 +137,19 @@ class Dashboard extends Component {
 
             <div className="dashboard-container">
 
-                <div className="dashboard-nav">
-                    <div>Nav goes here</div>
-                    <NavDashboard 
-                        userid={this.state.user.id}
-                    />
-                </div>
+                {/*<div className="dashboard-nav">*/}
+                {/*    <div>Nav goes here</div>*/}
+                {/*    <NavDashboard*/}
+                {/*        userid={this.state.user.id}*/}
+                {/*    />*/}
+                {/*</div>*/}
 
                 <div className="keypad-container">
                     <div className="dashboard-summary">
-                        <div>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</div>
+                        <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
                         <br></br>
-                        <div>Remaining Monthly Budget: ${user.limit - this.state.balance} </div>
-                        <div>Daily Budget: (formula: available budget/days left in month)</div>
+                        <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
+                        <p>Daily Budget: (formula: available budget/days left in month)</p>
                     </div>
 
                     {/* <div className="dashboard-daily-budget"> Daily Budget: (formula: available budget/days left in month) </div> */}
@@ -164,10 +164,34 @@ class Dashboard extends Component {
                     ))}
                 </div>
                     <div className="transaction-type-container">
-                        <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
-                        <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
-                        <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
-                        <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
+                        {/*<button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>*/}
+                        {/*<button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>*/}
+                        {/*<button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>*/}
+                        {/*<button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>*/}
+                        <a href="#"> personal
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                            <a href="#"> Charity
+                          <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <a href="#"> Business
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                        <a href="#"> other
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
                     </div>
                 </div>
             
