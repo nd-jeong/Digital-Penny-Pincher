@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Hairline|Gothic+A1&display=swap');
 
+#logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 .App-container {
   text-align: center;
 }
@@ -40,53 +46,111 @@
   align-content: space-between;  
 }
 
-.dashboard-container {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+/*.dashboard-container {*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*}*/
 
 
 
-.keypad-container {
-  margin: auto;
-  padding: 30px;
-  white-space: nowrap;
-  position: relative;
-    font-family: 'Bungee Hairline', cursive;
-  /* font-size: 80px; */
+/*.keypad-container {*/
+/*  margin: auto;*/
+/*  padding: 30px;*/
+/*  white-space: nowrap;*/
+/*  position: relative;*/
+/*    font-family: 'Bungee Hairline', cursive;*/
+/*  !* font-size: 80px; *!*/
 
-  font-size: 2em;
-    font-color: white;
-  text-align: center;
-  background-color: #84ecaf;
-  opacity: 0.4;
+/*  font-size: 2em;*/
+/*    font-color: white;*/
+/*  text-align: center;*/
+/*  background-color: #84ecaf;*/
+/*  opacity: 0.4;*/
 
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(5, 100px);
-  grid-gap: 0px;
-}
+/*  display: grid;*/
+/*  grid-template-columns: repeat(3, 100px);*/
+/*  grid-template-rows: repeat(5, 100px);*/
+/*  grid-gap: 0px;*/
+/*}*/
 
 /* .keypad-buttons {
   font-size: 
 } */
 
 
-.dashboard-summary {
-    text-align: left;
-    font-size: 20px;
-    margin: auto;
-    width: 50px;
-}
+/*.dashboard-summary {*/
+/*    text-align: left;*/
+/*    font-size: 20px;*/
+/*    margin: auto;*/
+/*    width: 50px;*/
+/*}*/
 
 /*.dashboard-summary p {*/
 /*    display: block;*/
 /*    width: 50px;*/
 /*}*/
+
+.keypad-container {
+    margin: auto;
+    padding: 30px;
+    white-space: nowrap;
+    position: relative;
+    font-family: 'Bungee Hairline', cursive;
+     /*font-size: 80px; */
+
+    font-size: 2em;
+    font-color: white;
+    text-align: center;
+    background-color: #84ecaf;
+    opacity: 0.4;
+    /*width: 300px;*/
+}
+
+.dashboard-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.dashboard-summary {
+    display: inline;
+    text-align: left;
+    font-size: 20px;
+    margin: auto;
+    width: 30px;
+}
+
+.keypad-num-container {
+    margin: auto;
+    padding: 30px;
+    white-space: nowrap;
+    position: relative;
+    font-family: 'Bungee Hairline', cursive;
+    /* font-size: 80px; */
+
+    font-size: 2em;
+    font-color: white;
+    text-align: center;
+    background-color: #84ecaf;
+    opacity: 0.4;
+
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(5, 100px);
+    grid-gap: 0px;
+}
+
+
+
+
+
 
 .landing-button {
     border: 1px solid #84ecaf;
