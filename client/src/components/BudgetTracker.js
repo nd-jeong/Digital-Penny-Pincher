@@ -129,11 +129,11 @@ class BudgetTracker extends Component {
         const remainingBudget = user.limit - this.state.currentBalance;
 
         const data = [
-            { title: "Personal", value: this.state.personalTotal, color: 'yellow' },
-            { title: "Business", value: this.state.businessTotal, color: 'blue' },
-            { title: "Charitable Donation", value: this.state.charityTotal, color: 'red' },
-            { title: "Other", value: this.state.otherTotal, color: 'green' },
-            {title: "Remaining Budget", value: remainingBudget, color: 'orange'}
+            { title: "Personal", value: this.state.personalTotal, color: '#FF7A86' },
+            { title: "Business", value: this.state.businessTotal, color: '#0AFFB7' },
+            { title: "Charitable Donation", value: this.state.charityTotal, color: '#FF7E5E' },
+            { title: "Other", value: this.state.otherTotal, color: '#77BEDB' },
+            {title: "Remaining Budget", value: remainingBudget, color: '#E1C076'}
         ];
 
         return (
