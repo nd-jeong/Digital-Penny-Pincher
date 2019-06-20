@@ -189,6 +189,12 @@
   line-height: 1;
 }
 
+
+div a personal {
+border: 1px solid lightgreen;
+}
+
+
  a {
     position: relative;
     display: block;
@@ -324,28 +330,28 @@ h2 {
 .legend-personal {
     height: 15px;
     width: 15px; 
-    background: yellow;
+    background: #FF7A86;
     margin: 5px;
 }
 
 .legend-business {
     height: 15px;
     width: 15px; 
-    background: blue;
+    background: #0AFFB7;
     margin: 5px;
 }
 
 .legend-charity {
     height: 15px;
     width: 15px; 
-    background: red;
+    background: #FF7E5E;
     margin: 5px;
 }
 
 .legend-other {
     height: 15px;
     width: 15px; 
-    background: green;
+    background: #77BEDB;
     margin: 5px;
 }
 
