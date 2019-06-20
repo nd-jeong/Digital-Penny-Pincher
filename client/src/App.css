@@ -88,9 +88,14 @@
 /*  grid-gap: 0px;*/
 /*}*/
 
-/* .keypad-buttons {
-  font-size: 
-} */
+.keypad-buttons {
+    transition-duration: 0.4s;
+}
+
+.keypad-buttons:hover {
+    color: white;
+}
+
 .dashboard-info {
     display: flex;
     flex-direction: row;
@@ -441,3 +446,8 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+.piechart-legend p {
+    margin: 0 10px;
+}
+
