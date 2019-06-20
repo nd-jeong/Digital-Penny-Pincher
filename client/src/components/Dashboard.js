@@ -27,12 +27,14 @@ class Dashboard extends Component {
     async componentDidMount() {
         const userInfo = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
         const user = userInfo.data;
+        console.log(user);
 
         // const resTwo = await axios.get(`http://localhost:4567/creditcards/${this.props.match.params.id}`);
         // const creditCard = resTwo.data;
 
         const transactionList = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
         const transaction = transactionList.data;
+        console.log(transaction);
 
         this.setState({
             user,
@@ -100,7 +102,9 @@ class Dashboard extends Component {
 
     totalTransactions() {
         const transactionArray = this.state.transaction;
+        
         const amountArray = [];
+        console.log(amountArray)
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 

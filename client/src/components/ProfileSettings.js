@@ -37,6 +37,7 @@ class ProfileSettings extends Component {
         return(
             // <div className="profile-container"> Profile (container) </div>
             <div>
+                <h2 className="user-profile"> My Profile </h2>
                 {this.state.redirect ? <Redirect to="/" /> : null}
                 <div> Limit: {userToUpdate.limit} </div>
                 <div> Name: {userToUpdate.name} </div>
