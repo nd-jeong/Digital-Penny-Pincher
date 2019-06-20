@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 
 
 class LandingPage extends Component {
@@ -9,8 +8,11 @@ class LandingPage extends Component {
       <div className="landing-container">
 
           <h2 style={{ padding: "10px 20px", textAlign: "center", color: "lightgreen"}}>Digital Penny Pincher</h2>
-        <Link to='/createuser'>Create User</Link>
-        <Link to='/signin'>Sign In</Link>
+          <div className='landing-button-container'>
+            <Link to='/createuser' className='landing-button'>Create User</Link>
+            <Link to='/signin' className='landing-button'>Sign In</Link>
+          </div>
+        
 
   <ul className="bubbles">
 

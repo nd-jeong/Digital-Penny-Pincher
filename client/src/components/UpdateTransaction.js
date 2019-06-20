@@ -15,6 +15,7 @@ class UpdateTransaction extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.deleteTransaction = this.deleteTransaction.bind(this);
     }
 
     async componentDidMount() {
@@ -47,6 +48,14 @@ class UpdateTransaction extends Component {
         });
     }
 
+    async deleteTransaction() {
+        await axios.delete(`http://localhost:4567/transactions/${this.props.match.params.id}/delete/${this.state.transaction.id}`);
+
+        this.setState({
+            redirect: true
+        });
+    }
+
     render() {
         const transaction = this.state.transaction;
         return(
@@ -69,6 +78,7 @@ class UpdateTransaction extends Component {
                     </select>
                     <input type='submit'></input>
                 </form>
+                <button onClick={this.deleteTransaction}>Delete</button>
             </div>
         )
     }

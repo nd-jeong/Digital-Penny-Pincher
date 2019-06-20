@@ -47,15 +47,15 @@ class CreateUser extends Component {
             <div>
                 {this.state.redirect ? <Redirect to='/signin'/> : null}
                 <form onSubmit={this.handleSubmit} className='create-user-form'>
-                    <label>Name</label>
+                    <label className='create-user-label'>Name</label>
                     <input name='name' type='text' onChange={this.handleChange} value={this.state.name} placeholder='Enter your name'></input>
-                    <label>Email</label>
+                    <label className='create-user-label'>Email</label>
                     <input name='email' type='email' onChange={this.handleChange} value={this.state.email} placeholder='Enter your email'></input>
-                    <label>Phone Number (Optional)</label>
+                    <label className='create-user-label'>Phone Number (Optional)</label>
                     <input name='phoneNumber' type='text' onChange={this.handleChange} value={this.state.phoneNumber} placeholder='Enter your phone number'></input>
-                    <label>Spending Limit</label>
+                    <label className='create-user-label'>Spending Limit</label>
                     <input name='limit' type='number' onChange={this.handleChange} value={this.state.limit}></input>
-                    <input type='submit'></input>
+                    <input type='submit' className='create-user-submit'></input>
                 </form>
             </div>
         )
