@@ -28,9 +28,6 @@ class Dashboard extends Component {
         const userInfo = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
         const user = userInfo.data;
 
-        // const resTwo = await axios.get(`http://localhost:4567/creditcards/${this.props.match.params.id}`);
-        // const creditCard = resTwo.data;
-
         const transactionList = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
         const transaction = transactionList.data;
 
@@ -139,13 +136,11 @@ class Dashboard extends Component {
                 {/*</div>*/}
                 <div className="dashboard-summary">
                     <div className='dashboard-info'>
-                    <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
+                        <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
                     </div>
                     <div className='dashboard-info'>
-                    <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
+                        <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
                     </div>
-                        
-                        
                 </div>
                 <div className="keypad-container">
                     
@@ -192,7 +187,7 @@ class Dashboard extends Component {
                         <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
                         <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
                         
-
+{/* 
                             <span></span>
                             <span></span>
                             <span></span>
@@ -218,7 +213,7 @@ class Dashboard extends Component {
                             <span></span>
                             <span></span>
                             <span></span>
-                        </a> */}
+                        </a> */} */}
                     </div>
                 </div>
             
