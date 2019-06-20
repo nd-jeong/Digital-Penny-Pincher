@@ -108,6 +108,8 @@ Helper functions should be generic enought that they can be reused in other appl
 | Library | What it Does | 
 | --- | :---: |  
 | Twilio | API used to send out text messages | 
+| React Minimal Pie Chart | Used to create pie chart https://www.npmjs.com/package/react-minimal-pie-chart |
+| Material UI | Used to create table for transactions | 
 
 
 ## Code Snippet
