@@ -113,18 +113,12 @@ class Dashboard extends Component {
             }
             
             const balance = amountArray.reduce(reducer);
-            
+            const roundedBalance = Math.floor(balance * 100) / 100;
+        
             this.setState({
-                balance
+                balance: roundedBalance
             });
         }
-        
-        const balance = amountArray.reduce(reducer);
-        const roundedBalance = Math.floor(balance * 100) / 100;
-        
-        this.setState({
-            balance: roundedBalance
-        });
     }
 
     render() {
@@ -164,11 +158,11 @@ class Dashboard extends Component {
                     ))}
                 </div>
                     <div className="transaction-type-container">
-                        {/*<button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>*/}
-                        {/*<button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>*/}
-                        {/*<button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>*/}
-                        {/*<button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>*/}
-                        <a href="#"> personal
+                        <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
+                        <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
+                        <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
+                        <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
+                        {/* <a href="#"> personal
                             <span></span>
                             <span></span>
                             <span></span>
@@ -191,7 +185,7 @@ class Dashboard extends Component {
                             <span></span>
                             <span></span>
                             <span></span>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             
