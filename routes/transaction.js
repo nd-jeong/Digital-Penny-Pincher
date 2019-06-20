@@ -53,15 +53,12 @@ transactionRouter.post('/:userid/create', async (req, res) => {
     res.json({newTransaction});
 });
 
-transactionRouter.delete('/:userid/:id', async (req, res) => {
-    const transaction = await Transaction.findAll({
-        where: {
-            id: req.params.id,
-            user_id: req.params.userid
-        }
-    });
+transactionRouter.delete('/:userid/delete/:id', async (req, res) => {
+    const transaction = await Transaction.findByPk(req.params.id);
 
     transaction.destroy();
+
+    res.json(transaction);
 });
 
 module.exports = {
