@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class MyTransactions extends Component {
     constructor() {
@@ -55,10 +56,12 @@ class MyTransactions extends Component {
         const transactions = transactionArray.map(transaction => {
             return(
                 <div key={transaction.id} className="transaction-div">
-                    <p>Date: {transaction.date}</p>
-                    <p>Time: {transaction.time}</p>
-                    <p>Amount: {transaction.amount}</p>
-                    <p>Type: {transaction.type}</p>
+                    <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`}>
+                        <p>Date: {transaction.date}</p>
+                        <p>Time: {transaction.time}</p>
+                        <p>Amount: {transaction.amount}</p>
+                        <p>Type: {transaction.type}</p>
+                    </Link>
                 </div>
             )
         });
@@ -67,10 +70,12 @@ class MyTransactions extends Component {
         const filteredTransactions = filteredTransactionArray.map(transaction => {
             return(
                 <div key={transaction.id} className="transaction-div">
-                    <p>Date: {transaction.date}</p>
-                    <p>Time: {transaction.time}</p>
-                    <p>Amount: {transaction.amount}</p>
-                    <p>Type: {transaction.type}</p>
+                    <Link to={`/dashboard/${this.props.match.params.id}/transactions/${transaction.id}`}>
+                        <p>Date: {transaction.date}</p>
+                        <p>Time: {transaction.time}</p>
+                        <p>Amount: {transaction.amount}</p>
+                        <p>Type: {transaction.type}</p>
+                    </Link>
                 </div>
             )
         })

@@ -104,17 +104,19 @@ class Dashboard extends Component {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
-        for (let i = 0; i < transactionArray.length; i++) {
-            let transaction = transactionArray[i].amount;
-            transaction = Number.parseFloat(transaction);
-            amountArray.push(transaction);
+        if (transactionArray.length > 0) {
+            for (let i = 0; i < transactionArray.length; i++) {
+                let transaction = transactionArray[i].amount;
+                transaction = Number.parseFloat(transaction);
+                amountArray.push(transaction);
+            }
+            
+            const balance = amountArray.reduce(reducer);
+            
+            this.setState({
+                balance
+            });
         }
-        
-        const balance = amountArray.reduce(reducer);
-        
-        this.setState({
-            balance
-        });
     }
 
     render() {
@@ -151,6 +153,7 @@ class Dashboard extends Component {
                             update={this.updateReadout}
                         />
                     ))}
+                </div>
                     <div className="transaction-type-container">
                         <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
                         <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
@@ -158,7 +161,7 @@ class Dashboard extends Component {
                         <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
                     </div>
                 </div>
-            </div>
+            
         );
     }
 }
