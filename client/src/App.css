@@ -54,6 +54,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  flex-direction: column;
 }
 
 
@@ -81,13 +82,20 @@
 /* .keypad-buttons {
   font-size: 
 } */
-
+.dashboard-info {
+    display: flex;
+    flex-direction: row;
+}
 
 .dashboard-summary {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     font-size: 20px;
     margin: auto;
-    width: 50px;
+    width: 50%;
+    align-items: center;
+    background: lightgreen;
 }
 
 /*.dashboard-summary p {*/

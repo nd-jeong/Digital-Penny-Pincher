@@ -137,14 +137,18 @@ class Dashboard extends Component {
                 {/*        userid={this.state.user.id}*/}
                 {/*    />*/}
                 {/*</div>*/}
-
-                <div className="keypad-container">
-                    <div className="dashboard-summary">
-                        <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
-                        <br></br>
-                        <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
-                        <p>Daily Budget: (formula: available budget/days left in month)</p>
+                <div className="dashboard-summary">
+                    <div className='dashboard-info'>
+                    <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
                     </div>
+                    <div className='dashboard-info'>
+                    <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
+                    </div>
+                        
+                        
+                </div>
+                <div className="keypad-container">
+                    
 
                     {/* <div className="dashboard-daily-budget"> Daily Budget: (formula: available budget/days left in month) </div> */}
 
