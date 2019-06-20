@@ -41,7 +41,7 @@ class BudgetTracker extends Component {
             amountArray.push(transaction);
         }
         const currentBalance = amountArray.reduce(reducer);
-        const roundedCurrentBalance = Math.floor(currentBalance * 100) / 100;
+        const roundedCurrentBalance = Math.floor(currentBalance * 100) / 100; // Rounds the balance to the first two integers after the decimal
         console.log(roundedCurrentBalance)
         this.setState({
             currentBalance: roundedCurrentBalance
@@ -54,13 +54,16 @@ class BudgetTracker extends Component {
 
     render() {
 
-        const user = this.state.user;
+        let user = this.state.user;
 
         return(
         <div>
-            <div className="budget-container"> Budget Tracker Activity (container) </div>
-            <div>Current Month Balance: {this.state.currentBalance} </div>
-            <div>Monthly Limit: {user.limit} </div>
+            <div className="budget-container"> <h2>Budget Tracker Activity (container)</h2> </div>
+            <div>Current Month Balance: ${this.state.currentBalance} </div>
+            <div>Remaining Monthly Budget: ${user.limit - this.state.currentBalance} </div>
+            <div>Monthly Limit: ${user.limit} </div>
+            <br></br>
+            <div>(Include spending category totals here?)</div>
         </div>
         )
     }

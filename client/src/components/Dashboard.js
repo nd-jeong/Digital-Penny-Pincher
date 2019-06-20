@@ -140,6 +140,7 @@ class Dashboard extends Component {
                     <div className="dashboard-summary">
                         <div>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</div>
                         <br></br>
+                        <div>Remaining Monthly Budget: ${user.limit - this.state.balance} </div>
                         <div>Daily Budget: (formula: available budget/days left in month)</div>
                     </div>
 
