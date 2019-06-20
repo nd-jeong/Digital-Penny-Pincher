@@ -100,6 +100,7 @@ class Dashboard extends Component {
 
     totalTransactions() {
         const transactionArray = this.state.transaction;
+        
         const amountArray = [];
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
@@ -117,6 +118,13 @@ class Dashboard extends Component {
                 balance
             });
         }
+        
+        const balance = amountArray.reduce(reducer);
+        const roundedBalance = Math.floor(balance * 100) / 100;
+        
+        this.setState({
+            balance: roundedBalance
+        });
     }
 
     render() {
@@ -140,6 +148,7 @@ class Dashboard extends Component {
                     <div className="dashboard-summary">
                         <div>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</div>
                         <br></br>
+                        <div>Remaining Monthly Budget: ${user.limit - this.state.balance} </div>
                         <div>Daily Budget: (formula: available budget/days left in month)</div>
                     </div>
 
