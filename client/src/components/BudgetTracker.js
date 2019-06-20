@@ -131,7 +131,7 @@ class BudgetTracker extends Component {
         const data = [
             { title: "Personal", value: this.state.personalTotal, color: '#FF7A86' },
             { title: "Business", value: this.state.businessTotal, color: '#0AFFB7' },
-            { title: "Charitable Donation", value: this.state.charityTotal, color: '#FF7E5E' },
+            { title: "Charitable Donation", value: this.state.charityTotal, color: '#F5F3F3' },
             { title: "Other", value: this.state.otherTotal, color: '#77BEDB' },
             {title: "Remaining Budget", value: remainingBudget, color: '#E1C076'}
         ];
