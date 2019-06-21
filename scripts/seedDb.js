@@ -159,27 +159,6 @@ const main = async () => {
         time: "16:38"
     });
 
-    // await creditCardOne.setUser(andy);
-    // await creditCardTwo.setUser(candice);
-    // await creditCardThree.setUser(ted);
-    // await creditCardFour.setUser(ted);
-
-    // await andyTransactionOne.setCreditCard(creditCardOne);
-    // await andyTransactionTwo.setCreditCard(creditCardOne);
-    // await andyTransactionThree.setCreditCard(creditCardOne);
-    // await andyTransactionFour.setCreditCard(creditCardOne);
-
-    // await candiceTransactionOne.setCreditCard(creditCardTwo);
-    // await candiceTransactionTwo.setCreditCard(creditCardTwo);
-    // await candiceTransactionThree.setCreditCard(creditCardTwo);
-
-    // await tedTransactionOne.setCreditCard(creditCardThree);
-    // await tedTransactionTwo.setCreditCard(creditCardThree);
-    // await tedTransactionThree.setCreditCard(creditCardFour);
-    // await tedTransactionFour.setCreditCard(creditCardThree);
-    // await tedTransactionFive.setCreditCard(creditCardFour);
-    // await tedTransactionSix.setCreditCard(creditCardThree);
-
     await andyTransactionOne.setUser(andy);
     await andyTransactionTwo.setUser(andy);
     await andyTransactionThree.setUser(andy);

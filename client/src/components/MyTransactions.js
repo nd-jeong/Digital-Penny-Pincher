@@ -19,8 +19,8 @@ class MyTransactions extends Component {
     }
 
     async componentDidMount() {
-        const res = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
-        const user = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+        const res = await axios.get(`/transactions/${this.props.match.params.id}`);
+        const user = await axios.get(`/users/${this.props.match.params.id}`);
 
         this.setState({
             transactionArray: res.data,
@@ -30,7 +30,7 @@ class MyTransactions extends Component {
 
     async componentDidUpdate() {
         if (this.state.transactionType) {
-            const res = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}/${this.state.transactionType}`);
+            const res = await axios.get(`/transactions/${this.props.match.params.id}/${this.state.transactionType}`);
 
             this.setState({
                 filteredTransactionArray: res.data,
