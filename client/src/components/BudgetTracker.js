@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ReactMinimalPieChart from 'react-minimal-pie-chart';
+import NavDashboard from './NavDashboard';
 
 class BudgetTracker extends Component {
     constructor(props) {
@@ -139,6 +140,9 @@ class BudgetTracker extends Component {
         return (
 
             <div className="budget-container">
+                <NavDashboard
+                    user={this.state.user}
+                />
                 <h2>Budget Tracker Activity</h2>
                 <div>Current Month Balance: ${this.state.currentBalance} </div>
                 <div>Remaining Monthly Budget: ${remainingBudget} </div>
