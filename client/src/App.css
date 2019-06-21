@@ -394,6 +394,7 @@ a:hover span:nth-child(4) {
 
 .user-profile {
     color: white;
+    line-height: 3;
 }
 
 .user-profile-button {
