@@ -1,14 +1,18 @@
 const sequelize = require('sequelize');
 
-const db = new sequelize({
-    database: "dpp_db",
-    dialect: "postgres",
-    define: {
-        underscored: true,
-        returning: true,
-        freezeTableName: true
-    }
-});
+// const db = new sequelize({
+//     database: "dpp_db",
+//     dialect: "postgres",
+//     define: {
+//         underscored: true,
+//         returning: true,
+//         freezeTableName: true
+//     }
+// });
+
+const db = new Sequelize(process.env.DATABASE_URL , {
+    dialect: 'postgres'
+  });
 
 const User = db.define("user", {
     name: {

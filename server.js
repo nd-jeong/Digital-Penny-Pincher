@@ -5,10 +5,13 @@ const {userRouter} = require('./routes/user');
 // const {creditCardRouter} = require('./routes/creditCard');
 const {transactionRouter} = require('./routes/transaction');
 const cors = require('cors');
+const path = require('path');
 
 app.use(bodyParser.json());
 
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, './client/build')));
 
 app.use((err, req, res, next) => {
     console.warn(err.stack);
@@ -22,6 +25,10 @@ app.use('/users', userRouter);
 // app.use('/creditcards', creditCardRouter);
 
 app.use('/transactions', transactionRouter);
+
+if (process.env.NODE_ENV == "production") {
+    app.use('*', (req, res) => res.sendFile(path.join(__dirname, './client/build', "index.html")));
+    }
 
 const PORT = process.env.PORT || 4567;
 
