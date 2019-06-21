@@ -24,6 +24,8 @@
     flex-direction: column;
     width: 25%;
     margin: 0 auto;
+    border: 1px solid white;
+    padding: 30px;
 }
 
 .create-user-label {
@@ -46,14 +48,16 @@
     background: lightgreen;
 }
 
+.signup-title {
+    color: white;
+}
+
 .dashboard-nav-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
   align-content: space-between;  
 }
-
-
 
 .dashboard-container {
   display: flex;
@@ -450,4 +454,44 @@ h2 {
 .piechart-legend p {
     margin: 0 10px;
 }
+
+/* Burger Menu */
+
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+.bm-burger-bars {
+    background: lightgreen;
+}
+
+.bm-burger-bars-hover {
+    background: white;
+}
+
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+    left: 225px;
+    top: -100px;
+}
+
+.bm-cross {
+    background: red;
+}
+
+.bm-item:focus {
+    outline: none;
+}
+
+.bm-menu {
+    background: rgba(0, 0, 0, 0.3);
+    width: 85%;
+}
+
+  
 

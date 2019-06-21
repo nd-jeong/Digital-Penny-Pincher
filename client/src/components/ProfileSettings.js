@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
+import NavDashboard from './NavDashboard';
 
 
 class ProfileSettings extends Component {
@@ -37,6 +38,9 @@ class ProfileSettings extends Component {
         return(
             // <div className="profile-container"> Profile (container) </div>
             <div>
+                <NavDashboard
+                    user={this.state.userToUpdate}
+                />
                 <h2 className="user-profile"> My Profile </h2>
                 {this.state.redirect ? <Redirect to="/" /> : null}
                 <div> Limit: {userToUpdate.limit} </div>

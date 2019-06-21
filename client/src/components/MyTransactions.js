@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import NavDashboard from './NavDashboard';
 
 class MyTransactions extends Component {
     constructor() {
@@ -10,7 +11,8 @@ class MyTransactions extends Component {
             transactionArray: [],
             transactionType: '',
             filter: false,
-            filteredTransactionArray: []
+            filteredTransactionArray: [],
+            user: []
         }
 
         this.transactionTypeFilter = this.transactionTypeFilter.bind(this);
@@ -18,9 +20,11 @@ class MyTransactions extends Component {
 
     async componentDidMount() {
         const res = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
+        const user = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
 
         this.setState({
-            transactionArray: res.data
+            transactionArray: res.data,
+            user: user.data
         });
     }
 
@@ -97,6 +101,9 @@ class MyTransactions extends Component {
 
         return (
             <div className="transactions-wrapper">
+                <NavDashboard
+                    user={this.state.user}
+                />
                 <h2>My Transactions</h2>
                 <div>
                     <button value="" onClick={this.transactionTypeFilter} className='transaction-type-button'>All</button>
