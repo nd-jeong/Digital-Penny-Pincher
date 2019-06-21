@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Hairline|Gothic+A1&display=swap');
 
+#logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 .App-container {
   text-align: center;
 }
@@ -47,6 +53,8 @@
   align-content: space-between;  
 }
 
+
+
 .dashboard-container {
   display: flex;
   position: absolute;
@@ -55,39 +63,84 @@
   right: 0;
   bottom: 0;
   flex-direction: column;
+  background-color: #5a3af6;
 }
 
 
 
-.keypad-container {
-  margin: auto;
-  padding: 30px;
-  white-space: nowrap;
-  position: relative;
-    font-family: 'Bungee Hairline', cursive;
-  /* font-size: 80px; */
 
-  font-size: 2em;
-    font-color: white;
-  text-align: center;
-  background-color: #84ecaf;
-  opacity: 0.4;
+/*.keypad-container {*/
+/*  margin: auto;*/
+/*  padding: 30px;*/
+/*  white-space: nowrap;*/
+/*  position: relative;*/
+/*    font-family: 'Bungee Hairline', cursive;*/
+/*  !* font-size: 80px; *!*/
 
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(5, 100px);
-  grid-gap: 0px;
+/*  font-size: 2em;*/
+/*    font-color: white;*/
+/*  text-align: center;*/
+/*  background-color: #84ecaf;*/
+/*  opacity: 0.4;*/
+
+/*  display: grid;*/
+/*  grid-template-columns: repeat(3, 100px);*/
+/*  grid-template-rows: repeat(5, 100px);*/
+/*  grid-gap: 0px;*/
+/*}*/
+
+.keypad-buttons {
+    transition-duration: 0.4s;
 }
 
-/* .keypad-buttons {
-  font-size: 
-} */
+.keypad-buttons:hover {
+    color: white;
+}
+
 .dashboard-info {
     display: flex;
     flex-direction: row;
 }
 
+/*.dashboard-summary {*/
+/*    text-align: left;*/
+/*    font-size: 20px;*/
+/*    margin: auto;*/
+/*    width: 50px;*/
+/*}*/
+
+/*.dashboard-summary p {*/
+/*    display: block;*/
+/*    width: 50px;*/
+/*}*/
+
+.keypad-container {
+    margin: auto;
+    padding: 30px;
+    white-space: nowrap;
+    position: relative;
+    font-family: 'Bungee Hairline', cursive;
+     /*font-size: 80px; */
+
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    background-color: #84ecaf;
+    opacity: 0.4;
+    /*width: 300px;*/
+}
+
+.dashboard-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .dashboard-summary {
+
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -98,10 +151,30 @@
     background: lightgreen;
 }
 
-/*.dashboard-summary p {*/
-/*    display: block;*/
-/*    width: 50px;*/
-/*}*/
+.keypad-num-container {
+    margin: auto;
+    padding: 30px;
+    white-space: nowrap;
+    position: relative;
+    font-family: 'Bungee Hairline', cursive;
+    /* font-size: 80px; */
+
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    background-color: #84ecaf;
+    opacity: 0.4;
+
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(5, 100px);
+    grid-gap: 0px;
+}
+
+
+
+
+
 
 .landing-button {
     border: 1px solid #84ecaf;
@@ -139,6 +212,7 @@
   position: center;
   line-height: 1;
 }
+
 
 a {
     position: relative;
@@ -337,28 +411,28 @@ h2 {
 .legend-personal {
     height: 15px;
     width: 15px; 
-    background: yellow;
+    background: #FF7A86;
     margin: 5px;
 }
 
 .legend-business {
     height: 15px;
     width: 15px; 
-    background: blue;
+    background: #0AFFB7;
     margin: 5px;
 }
 
 .legend-charity {
     height: 15px;
     width: 15px; 
-    background: red;
+    background: #F5F3F3;
     margin: 5px;
 }
 
 .legend-other {
     height: 15px;
     width: 15px; 
-    background: green;
+    background: #77BEDB;
     margin: 5px;
 }
 
@@ -373,3 +447,8 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+.piechart-legend p {
+    margin: 0 10px;
+}
+
