@@ -149,9 +149,9 @@ class BudgetTracker extends Component {
                 <div>Remaining Monthly Budget: ${remainingBudget} </div>
 
                 <div className="edit-budget"> Monthly Limit: ${user.limit} 
-                <button><Link className="edit-limit" to={`/dashboard/:id/profile/edit`}> Edit </Link></button>
+                <button><Link className="edit-limit" to={`/dashboard/${this.state.user.id}/profile/edit`}> Edit </Link></button>
                 </div>
-                
+
                 <br></br>
                 
                 <div className='piechart-legend'>
