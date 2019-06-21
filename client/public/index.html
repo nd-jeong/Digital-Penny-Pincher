@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./App.css">
     <script src="https://kit.fontawesome.com/dc6c29cf8e.js"></script>
 
@@ -24,38 +26,20 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Digital Penny Pincher</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
 
-  <img id="logo" src="https://i.postimg.cc/kGQ8TXsR/My-Post-6.png" alt="DPP" width="200" height="240">
-<!-- <div id="sidebar">
-  <div class="toggle-btn" onClick="toggleSidebar()">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul>
-      <li>Settings</li>
-      <li>Budget</li>
-      <li>Transactions</li>
-      <li>Sign Out</li>
-    </ul>
-  </div>
-</div> -->
+    <img id="logo" src="https://i.postimg.cc/kGQ8TXsR/My-Post-6.png" alt="DPP" width="200" height="240">
 
+    <script>
 
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle('active');
+        }
 
-
-
-
-<script>
-
-  function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle('active');
-  }
-
-</script>
+    </script>
     <div id="root"></div>
 
 
@@ -69,5 +53,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>

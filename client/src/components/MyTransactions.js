@@ -122,5 +122,3 @@ class MyTransactions extends Component {
 }
 
 export default MyTransactions;
-
-// Just a thought: Perhaps transactions 

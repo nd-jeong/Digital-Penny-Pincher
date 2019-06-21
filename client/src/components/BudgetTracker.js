@@ -47,7 +47,7 @@ class BudgetTracker extends Component {
     totalTransactions() {
         const transactionArray = this.state.transaction
         const amountArray = []
-        console.log(amountArray)
+        
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
         for (let i = 0; i < transactionArray.length; i++) {
@@ -56,8 +56,8 @@ class BudgetTracker extends Component {
             amountArray.push(transaction);
         }
         const currentBalance = amountArray.reduce(reducer);
-        const roundedCurrentBalance = Math.floor(currentBalance * 100) / 100; // Rounds the balance to the first two integers after the decimal
-        console.log(roundedCurrentBalance)
+        const roundedCurrentBalance = Math.floor(currentBalance * 100) / 100; 
+    
         this.setState({
             currentBalance: roundedCurrentBalance
         });

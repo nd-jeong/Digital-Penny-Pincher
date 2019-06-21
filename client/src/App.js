@@ -25,13 +25,8 @@ render() {
           <Route exact path="/dashboard/:id" component={Dashboard} />
           <Route exact path="/dashboard/:id/profile" component={ProfileSettings} />
           <Route exact path="/dashboard/:id/profile/edit" component={UpdateUser} />
-
-
           <Route exact path="/dashboard/:id/budget" component={BudgetTracker} />
-          {/* <Route exact path="/dashboard/budget/edit" component={UpdateBudget} /> */}
           <Route exact path="/dashboard/:id/transactions" component={MyTransactions} />
-
-
           <Route exact path="/dashboard/:id/transactions/:transactionid/" component={UpdateTransaction} />
         </Switch>
       </div>

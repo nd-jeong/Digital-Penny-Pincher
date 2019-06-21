@@ -154,35 +154,7 @@ class Dashboard extends Component {
                     <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
                     <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
                     <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
-
-                    
-                            {/* <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
-                            <a href="#">
-                                <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
-                          <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
-                        <a href="#">
-                            <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
-                        <a href="#">
-                            <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>  */}
-                    </div>
+                </div>
             </div>
         );
     }

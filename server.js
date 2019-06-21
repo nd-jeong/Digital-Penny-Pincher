@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const {userRouter} = require('./routes/user');
-// const {creditCardRouter} = require('./routes/creditCard');
 const {transactionRouter} = require('./routes/transaction');
 const cors = require('cors');
 const path = require('path');
@@ -21,8 +20,6 @@ app.use((err, req, res, next) => {
 });
 
 app.use('/users', userRouter);
-
-// app.use('/creditcards', creditCardRouter);
 
 app.use('/transactions', transactionRouter);
 

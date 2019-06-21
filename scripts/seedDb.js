@@ -7,10 +7,6 @@ const main = async () => {
         where: {}
     });
 
-    // await CreditCard.destroy({
-    //     where: {}
-    // });
-
     await Transaction.destroy({
         where: {}
     });

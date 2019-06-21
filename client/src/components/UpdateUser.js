@@ -18,7 +18,7 @@ class UpdateUser extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // When page loads fetch the current data and save/set it to the state:
+
     async componentDidMount() {
         const response = await axios.get(`/users/${this.props.match.params.id}`)
         
