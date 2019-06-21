@@ -109,7 +109,7 @@ Helper functions should be generic enought that they can be reused in other appl
 | --- | :---: |  
 | Twilio | API used to send out text messages | 
 | React Minimal Pie Chart | Used to create pie chart https://www.npmjs.com/package/react-minimal-pie-chart |
-| React Burger Menu | Used to create hamburger menu | 
+| React Burger Menu | Used to create hamburger menu https://github.com/negomi/react-burger-menu | 
 
 ## Code Snippet
 
