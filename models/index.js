@@ -1,4 +1,4 @@
-const sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 
 // const db = new sequelize({
 //     database: "dpp_db",
@@ -11,7 +11,12 @@ const sequelize = require('sequelize');
 // });
 
 const db = new Sequelize(process.env.DATABASE_URL , {
-    dialect: 'postgres'
+    dialect: 'postgres',
+    define: {
+        underscored: true,
+        returning: true,
+        freezeTableName: true
+    }
   });
 
 const User = db.define("user", {
@@ -33,19 +38,6 @@ const User = db.define("user", {
 });
 
 
-
-// const CreditCard = db.define("creditCard", {
-//     number: {
-//         type: sequelize.STRING,
-//         unique: true
-//     },
-//     expiration: sequelize.STRING,
-//     ccv: sequelize.STRING,
-//     balance: sequelize.INTEGER,
-//     limit: sequelize.INTEGER,
-// });
-
-
 const Transaction = db.define("transaction", {
     amount: sequelize.DECIMAL(5,2),
     type: sequelize.STRING,
@@ -53,16 +45,11 @@ const Transaction = db.define("transaction", {
     time: sequelize.STRING
 });
 
-// User.hasMany(CreditCard);
-// CreditCard.belongsTo(User);
-// CreditCard.hasMany(Transaction);
-// Transaction.belongsTo(CreditCard);
 User.hasMany(Transaction);
 Transaction.belongsTo(User);
 
 module.exports = {
     db,
     User,
-    // CreditCard,
     Transaction
 };
