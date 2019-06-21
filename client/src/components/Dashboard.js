@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import KeypadButtons from "./KeypadButtons";
 import NavDashboard from "./NavDashboard";
 import axios from 'axios';
@@ -41,7 +40,6 @@ class Dashboard extends Component {
 
     async componentDidUpdate() {
         if (this.state.transactionType) {
-            // add error catch before updating balance
             const newTransaction = await axios.post(`http://localhost:4567/transactions/${this.props.match.params.id}/create`, {
                 amount: this.state.readout,
                 type: this.state.transactionType,
@@ -124,17 +122,7 @@ class Dashboard extends Component {
         let user = this.state.user;
 
         return (
-            
-
-
             <div className="dashboard-container">
-                    
-                {/* <div className="dashboard-nav">
-                   <div>Nav goes here</div>
-                   <NavDashboard
-                       userid={this.state.user.id}
-                    />
-                </div> */}
                 <NavDashboard
                     user={this.state.user}
                 />
@@ -147,10 +135,6 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div className="keypad-container">
-
-
-                    {/* <div className="dashboard-daily-budget"> Daily Budget: (formula: available budget/days left in month) </div> */}
-
                     <div className="read-out"> {readout} </div>
                     <div className="keypad-num-container">
                         {buttons.map(button => (
@@ -162,37 +146,14 @@ class Dashboard extends Component {
                         ))}
                     </div>
                 </div>
-
-                {/*<div className="keypad-container">*/}
-                {/*    <div className="dashboard-summary">*/}
-                {/*        <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>*/}
-                {/*        <br></br>*/}
-                {/*        <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>*/}
-                {/*        <p>Daily Budget: (formula: available budget/days left in month)</p>*/}
-                {/*    </div>*/}
-
-                {/*    /!* <div className="dashboard-daily-budget"> Daily Budget: (formula: available budget/days left in month) </div> *!/*/}
-
-                {/*    <div className="read-out"> {readout} </div>*/}
-                {/*    {buttons.map(button => (*/}
-                {/*        <KeypadButtons*/}
-                {/*            key={button}*/}
-                {/*            value={button}*/}
-                {/*            update={this.updateReadout}*/}
-                {/*        />*/}
-                {/*    ))}*/}
-                {/*</div>*/}
                 <div className="transaction-type-container">
-
-                    <button className="personal" value='personal' onClick={this.setTransactionInfo}>personal</button>
-
                     <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
                     <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
                     <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
                     <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
 
-                    {/* 
-                            <span></span>
+                    
+                            {/* <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
@@ -217,10 +178,9 @@ class Dashboard extends Component {
                             <span></span>
                             <span></span>
                             <span></span>
-                        </a> */} */}
+                        </a>  */}
                     </div>
             </div>
-
         );
     }
 }

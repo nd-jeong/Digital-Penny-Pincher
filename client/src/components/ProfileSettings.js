@@ -10,48 +10,54 @@ class ProfileSettings extends Component {
 
         this.state = {
             userToUpdate: {},
-            redirect: false
+            redirect: false,
+            edit: false
         }
         this.handleDelete = this.handleDelete.bind(this);
+        this.redirect = this.redirect.bind(this);
     }
 
     async componentDidMount() {
-        const response = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`)
-        console.log(response)
-        const currentUser = response.data
+        const response = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+        const currentUser = response.data;
+
         this.setState({
             userToUpdate: currentUser
         })
     }
 
     async handleDelete() {
-        await axios.delete(`http://localhost:4567/users/${this.props.match.params.id}`) // also written as: {this.state.userToShow.id}
-        // Update state to intialize redirect
+        await axios.delete(`http://localhost:4567/users/${this.props.match.params.id}`);
+
         this.setState({
             redirect: true
-        })
+        });
     }
 
+    redirect() {
+        this.setState({
+            edit: true
+        });
+    }
 
     render() {
-        const userToUpdate = this.state.userToUpdate
+        const userToUpdate = this.state.userToUpdate;
+
         return(
-            // <div className="profile-container"> Profile (container) </div>
-            <div>
+            <div className="user-profile">
                 <NavDashboard
                     user={this.state.userToUpdate}
                 />
-                <h2 className="user-profile"> My Profile </h2>
+                <h2> My Profile </h2>
                 {this.state.redirect ? <Redirect to="/" /> : null}
+                {this.state.edit ? <Redirect to={`/dashboard/${this.props.match.params.id}/profile/edit`}/> : null}
                 <div> Limit: {userToUpdate.limit} </div>
                 <div> Name: {userToUpdate.name} </div>
                 <div> Email: {userToUpdate.email} </div>
                 <div> Phone Number: {userToUpdate.phoneNumber} </div>
-                <button><Link to={`/dashboard/${this.props.match.params.id}/profile/edit/`}> edit </Link></button>
-                <button onClick={this.handleDelete}> delete </button>
-                
+                <button onClick={this.redirect} className='user-profile-button'> Edit </button>
+                <button onClick={this.handleDelete} className='user-profile-button'> Delete </button>
             </div>
-           
         )
     }
 }
