@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import KeypadButtons from "./KeypadButtons";
 import NavDashboard from "./NavDashboard";
 import axios from 'axios';
@@ -48,7 +48,7 @@ class Dashboard extends Component {
                 date: this.state.date,
                 time: this.state.time
             })
-            
+
             const updatedTransactionArray = this.state.transaction;
             updatedTransactionArray.push(newTransaction.data.newTransaction);
 
@@ -83,9 +83,9 @@ class Dashboard extends Component {
 
         // https://tecadmin.net/get-current-date-time-javascript/
         const today = new Date();
-        let date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear();
+        let date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear();
         let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        
+
         this.setState({
             transactionType,
             date,
@@ -97,7 +97,7 @@ class Dashboard extends Component {
 
     totalTransactions() {
         const transactionArray = this.state.transaction;
-        
+
         const amountArray = [];
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
@@ -108,10 +108,10 @@ class Dashboard extends Component {
                 transaction = Number.parseFloat(transaction);
                 amountArray.push(transaction);
             }
-            
+
             const balance = amountArray.reduce(reducer);
             const roundedBalance = Math.floor(balance * 100) / 100;
-        
+
             this.setState({
                 balance: roundedBalance
             });
@@ -124,16 +124,20 @@ class Dashboard extends Component {
         let user = this.state.user;
 
         return (
+            
 
 
             <div className="dashboard-container">
-
-                {/*<div className="dashboard-nav">*/}
-                {/*    <div>Nav goes here</div>*/}
-                {/*    <NavDashboard*/}
-                {/*        userid={this.state.user.id}*/}
-                {/*    />*/}
-                {/*</div>*/}
+                    
+                {/* <div className="dashboard-nav">
+                   <div>Nav goes here</div>
+                   <NavDashboard
+                       userid={this.state.user.id}
+                    />
+                </div> */}
+                <NavDashboard
+                    user={this.state.user}
+                />
                 <div className="dashboard-summary">
                     <div className='dashboard-info'>
                         <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
@@ -143,19 +147,19 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div className="keypad-container">
-                    
+
 
                     {/* <div className="dashboard-daily-budget"> Daily Budget: (formula: available budget/days left in month) </div> */}
 
                     <div className="read-out"> {readout} </div>
                     <div className="keypad-num-container">
-                    {buttons.map(button => (
-                        <KeypadButtons
-                            key={button}
-                            value={button}
-                            update={this.updateReadout}
-                        />
-                    ))}
+                        {buttons.map(button => (
+                            <KeypadButtons
+                                key={button}
+                                value={button}
+                                update={this.updateReadout}
+                            />
+                        ))}
                     </div>
                 </div>
 
@@ -178,16 +182,16 @@ class Dashboard extends Component {
                 {/*        />*/}
                 {/*    ))}*/}
                 {/*</div>*/}
-                    <div className="transaction-type-container">
+                <div className="transaction-type-container">
 
-                            <button className="personal" value='personal' onClick={this.setTransactionInfo}>personal</button>
+                    <button className="personal" value='personal' onClick={this.setTransactionInfo}>personal</button>
 
-                        <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
-                        <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
-                        <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
-                        <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
-                        
-{/* 
+                    <button className="personal" value='personal' onClick={this.setTransactionInfo}> Personal </button>
+                    <button className="business" value='business' onClick={this.setTransactionInfo}> Business </button>
+                    <button className="charity" value='charity' onClick={this.setTransactionInfo}> Charitable Donations </button>
+                    <button className="other" value='other' onClick={this.setTransactionInfo}> Other </button>
+
+                    {/* 
                             <span></span>
                             <span></span>
                             <span></span>
@@ -215,8 +219,8 @@ class Dashboard extends Component {
                             <span></span>
                         </a> */} */}
                     </div>
-                </div>
-            
+            </div>
+
         );
     }
 }
