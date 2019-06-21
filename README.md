@@ -11,10 +11,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Day 1| Project Proposal / Project Start | Complete
-|Day 2| Database / React Components | Incomplete
-|Day 3| Database / React Components | Incomplete
-|Day 4| Initial Clickable Model | Incomplete
-|Day 5| MVP  | Incomplete
+|Day 2| Database / React Components | Complete
+|Day 3| Database / React Components | Complete
+|Day 4| Initial Clickable Model | Complete
+|Day 5| MVP  | Complete
 |Day 6| Post-MVP | Incomplete
 |Day 7| Present | Incomplete
 
@@ -109,8 +109,7 @@ Helper functions should be generic enought that they can be reused in other appl
 | --- | :---: |  
 | Twilio | API used to send out text messages | 
 | React Minimal Pie Chart | Used to create pie chart https://www.npmjs.com/package/react-minimal-pie-chart |
-| Material UI | Used to create table for transactions | 
-
+| React Burger Menu | Used to create hamburger menu https://github.com/negomi/react-burger-menu | 
 
 ## Code Snippet
 

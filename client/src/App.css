@@ -24,6 +24,8 @@
     flex-direction: column;
     width: 25%;
     margin: 0 auto;
+    border: 1px solid white;
+    padding: 30px;
 }
 
 .create-user-label {
@@ -46,14 +48,16 @@
     background: lightgreen;
 }
 
+.signup-title {
+    color: white;
+}
+
 .dashboard-nav-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
   align-content: space-between;  
 }
-
-
 
 .dashboard-container {
   display: flex;
@@ -91,15 +95,25 @@
 
 .keypad-buttons {
     transition-duration: 0.4s;
+    border: 1px solid white;
+
 }
 
 .keypad-buttons:hover {
-    color: white;
+    color: #85daef;
 }
 
 .dashboard-info {
     display: flex;
     flex-direction: row;
+    text-align: center;
+}
+
+
+.edit-limit {
+    margin: auto;
+    padding: 0px;
+    color: black;
 }
 
 /*.dashboard-summary {*/
@@ -126,8 +140,9 @@
     color: white;
     text-align: center;
     background-color: #84ecaf;
-    opacity: 0.4;
+    /* opacity: 0.4; */
     /*width: 300px;*/
+    border-radius: 30px;
 }
 
 .dashboard-container {
@@ -137,6 +152,9 @@
     left: 0;
     right: 0;
     bottom: 0;
+    font-family: 'Montserrat', sans-serif;    
+
+    
 }
 
 .dashboard-summary {
@@ -146,35 +164,32 @@
     text-align: left;
     font-size: 20px;
     margin: auto;
-    width: 50%;
+    width: 40%;
     align-items: center;
-    background: lightgreen;
+    color: white;
+    font-family: 'Montserrat', sans-serif;    
+
 }
 
 .keypad-num-container {
     margin: auto;
-    padding: 30px;
+    padding: 5px;
     white-space: nowrap;
     position: relative;
     font-family: 'Bungee Hairline', cursive;
     /* font-size: 80px; */
 
     font-size: 2em;
-    color: white;
+    color: rgb(240, 239, 239);
     text-align: center;
     background-color: #84ecaf;
-    opacity: 0.4;
+    /* opacity: 0.4; */
 
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-rows: repeat(4, 100px);
     grid-gap: 0px;
 }
-
-
-
-
-
 
 .landing-button {
     border: 1px solid #84ecaf;
@@ -199,7 +214,7 @@
 
 .read-out {
   grid-column: 1 / -1;
-  font-size: 1em;
+  font-size: 50px;
   line-height: 1.5;
   overflow: hidden;
   margin: auto;
@@ -396,13 +411,37 @@ a:hover span:nth-child(4) {
     color: lightgreen;
 }
 
+.user-profile {
+    color: white;
+    line-height: 3;
+}
 
+.user-profile-button {
+    margin: 15px;
+    width: 65px;       
+    transition-duration: .4s;
+}
+
+.user-profile-button:hover {
+    background: #3D1978;
+    color: lightgreen;
+    border: 1px solid lightgreen;
+}
 
 h2 {
     font-family: 'Bungee Hairline', cursive;
     font-size: xx-large;
     font-weight: bolder;
 }
+
+.user-profile {
+    color: white;
+}
+
+.limit {
+    color: white;
+}
+
 
 
 
@@ -451,4 +490,44 @@ h2 {
 .piechart-legend p {
     margin: 0 10px;
 }
+
+/* Burger Menu */
+
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+.bm-burger-bars {
+    background: lightgreen;
+}
+
+.bm-burger-bars-hover {
+    background: white;
+}
+
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+    left: 225px;
+    top: -100px;
+}
+
+.bm-cross {
+    background: red;
+}
+
+.bm-item:focus {
+    outline: none;
+}
+
+.bm-menu {
+    background: rgba(0, 0, 0, 0.3);
+    width: 85%;
+}
+
+  
 

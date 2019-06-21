@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
+import NavDashboard from './NavDashboard';
 
 class UpdateTransaction extends Component {
     constructor() {
@@ -10,7 +11,8 @@ class UpdateTransaction extends Component {
             redirect: false,
             transaction: [],
             newAmount: 0,
-            newType: ''
+            newType: '',
+            user: []
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,10 +22,13 @@ class UpdateTransaction extends Component {
 
     async componentDidMount() {
         const transactionInfo = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.userid}/find/${this.props.match.params.transactionid}`);
+
+        const user = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
         
         this.setState({
-            transaction: transactionInfo.data
-        })
+            transaction: transactionInfo.data,
+            user: user.data
+        });
     }
 
     async handleSubmit(event) {
@@ -60,12 +65,19 @@ class UpdateTransaction extends Component {
         const transaction = this.state.transaction;
         return(
             <div>
+                <NavDashboard
+                    user={this.state.user}
+                />
                 {this.state.redirect ? <Redirect to={`/dashboard/${this.props.match.params.id}/transactions`}/> : null}
                 <div className="transaction-info-div">
-                    <p><h5>Date:</h5> {transaction.date}</p>
-                    <p><h5>Time:</h5> {transaction.time}</p>
-                    <p><h5>Current Amount:</h5> ${transaction.amount}</p>
-                    <p><h5>Current Type:</h5> {transaction.type}</p>
+                    <h5>Date:</h5>
+                    <p> {transaction.date}</p>
+                    <h5>Time:</h5>
+                    <p> {transaction.time}</p>
+                    <h5>Current Amount:</h5>
+                    <p> ${transaction.amount}</p>
+                    <h5>Current Type:</h5>
+                    <p> {transaction.type}</p>
                 </div>
                 <form onSubmit={this.handleSubmit} className='transaction-update-form'>
                     <label>Enter new transaction amount:</label>
