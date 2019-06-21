@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
-import { AwesomeButton } from "react-awesome-button";
-import "react-awesome-button/dist/styles.css";
 
 class CreateUser extends Component {
     constructor() {
@@ -32,7 +30,7 @@ class CreateUser extends Component {
     async handleSubmit(event) {
         event.preventDefault();
 
-        await axios.post(`http://localhost:4567/users/create`, {
+        await axios.post(`/users/create`, {
             name: this.state.name,
             email: this.state.email,
             phoneNumber: this.state.phoneNumber,

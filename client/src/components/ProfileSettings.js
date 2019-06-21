@@ -18,7 +18,7 @@ class ProfileSettings extends Component {
     }
 
     async componentDidMount() {
-        const response = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+        const response = await axios.get(`/users/${this.props.match.params.id}`);
         const currentUser = response.data;
 
         this.setState({
@@ -27,7 +27,7 @@ class ProfileSettings extends Component {
     }
 
     async handleDelete() {
-        await axios.delete(`http://localhost:4567/users/${this.props.match.params.id}`);
+        await axios.delete(`/users/${this.props.match.params.id}`);
 
         this.setState({
             redirect: true

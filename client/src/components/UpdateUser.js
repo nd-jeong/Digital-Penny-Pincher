@@ -20,7 +20,7 @@ class UpdateUser extends Component {
     }
     // When page loads fetch the current data and save/set it to the state:
     async componentDidMount() {
-        const response = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`)
+        const response = await axios.get(`/users/${this.props.match.params.id}`)
         
         const updateUser = response.data
         this.setState({
@@ -43,7 +43,7 @@ class UpdateUser extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        const response = await axios.put(`http://localhost:4567/users/${this.props.match.params.id}`, {
+        const response = await axios.put(`/users/${this.props.match.params.id}`, {
             limit: this.state.limit,
             name: this.state.name,
             email: this.state.email,

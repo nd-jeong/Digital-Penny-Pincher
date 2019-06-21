@@ -12,7 +12,7 @@ class UserSignIn extends Component {
     }
 
     async componentDidMount() {
-        const getUsers = await axios.get('http://localhost:4567/users');
+        const getUsers = await axios.get('/users');
 
         this.setState({
             userArray: getUsers.data

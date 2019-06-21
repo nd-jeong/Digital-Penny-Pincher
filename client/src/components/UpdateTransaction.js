@@ -21,9 +21,9 @@ class UpdateTransaction extends Component {
     }
 
     async componentDidMount() {
-        const transactionInfo = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.userid}/find/${this.props.match.params.transactionid}`);
+        const transactionInfo = await axios.get(`/transactions/${this.props.match.params.userid}/find/${this.props.match.params.transactionid}`);
 
-        const user = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+        const user = await axios.get(`/users/${this.props.match.params.id}`);
         
         this.setState({
             transaction: transactionInfo.data,
@@ -34,7 +34,7 @@ class UpdateTransaction extends Component {
     async handleSubmit(event) {
         event.preventDefault();
 
-        await axios.put(`http://localhost:4567/transactions/${this.props.match.params.transactionid}`, {
+        await axios.put(`/transactions/${this.props.match.params.transactionid}`, {
             amount: this.state.newAmount,
             type: this.state.newType
         });
@@ -54,7 +54,7 @@ class UpdateTransaction extends Component {
     }
 
     async deleteTransaction() {
-        await axios.delete(`http://localhost:4567/transactions/${this.props.match.params.id}/delete/${this.state.transaction.id}`);
+        await axios.delete(`/transactions/${this.props.match.params.id}/delete/${this.state.transaction.id}`);
 
         this.setState({
             redirect: true

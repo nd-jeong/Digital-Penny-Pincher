@@ -29,10 +29,10 @@ class BudgetTracker extends Component {
     }
 
     async componentDidMount() {
-        const userInfo = await axios.get(`http://localhost:4567/users/${this.props.match.params.id}`);
+        const userInfo = await axios.get(`/users/${this.props.match.params.id}`);
         const user = userInfo.data
 
-        const transactionList = await axios.get(`http://localhost:4567/transactions/${this.props.match.params.id}`);
+        const transactionList = await axios.get(`/transactions/${this.props.match.params.id}`);
         const transaction = transactionList.data;
 
         this.setState({
