@@ -21,28 +21,28 @@ const db = new Sequelize(process.env.DATABASE_URL , {
 
 const User = db.define("user", {
     name: {
-        type: sequelize.STRING,
+        type: Sequelize.STRING,
         allowNull: false
     },
     email: {
-        type: sequelize.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true
     },
     phoneNumber: {
-        type: sequelize.STRING,
+        type: Sequelize.STRING,
         allowNull: true,
         unique: true
     },
-    limit: sequelize.INTEGER
+    limit: Sequelize.INTEGER
 });
 
 
 const Transaction = db.define("transaction", {
-    amount: sequelize.DECIMAL(5,2),
-    type: sequelize.STRING,
-    date: sequelize.STRING,
-    time: sequelize.STRING
+    amount: Sequelize.DECIMAL(5,2),
+    type: Sequelize.STRING,
+    date: Sequelize.STRING,
+    time: Sequelize.STRING
 });
 
 User.hasMany(Transaction);
