@@ -16,8 +16,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Day 4| Initial Clickable Model | Complete
 |Day 5| MVP  | Complete
 |Day 6| Post-MVP | Incomplete
-|Day 7| Present | Incomplete
-
+|Day 7| Present | Complete
 
 ## Project Description
 
@@ -81,19 +80,18 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Adding Forms | H | 5hrs| 0 |
+| Adding Forms | H | 5hrs| 4 |
 | Create and Seed Database | H | 6hrs| 4 |
-| Create Nav Component | H | 3hrs| 0 |
-| Create Header/Footer Component | H | 3hrs| 0 |
-| Create Landing Page Component | H | 4hrs| 5 |
-| Create Dashboard Component | H | 6hrs| 0 |
-| Create Activity Component | H | 6hrs| 0 |
-| Create Credit Cards Component inside Profile/Settings | H | 6hrs| 0 |
-| Find and Work with API | H | 4hrs| 0 |
-| Styling | H | 5hrs| 0 |
+| Create Nav Component | H | 3hrs| 4 |
+| Create Landing Page Component | H | 4hrs| 6 |
+| Create Dashboard Component | H | 6hrs| 5 |
+| Create Activity Component | H | 6hrs| 5 |
+| Create Transaction Component | H | 6hrs| 7 |
+| Find and Work with API | H | 4hrs| 4 |
+| Styling | H | 5hrs| 10 |
 | Authentication | M | 7hrs| 0 |
-| Create User Component | M | 4hrs| 0 |
-| Total | H | 59hrs| 9hrs | 
+| Create User Component | M | 4hrs| 4 |
+| Total | H | 59hrs| 53hrs | 
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
@@ -123,12 +121,10 @@ function reverse(string) {
 ```
 
 ## Change Log
-We decided to remove the credit cards component and table. Instead we will add a transaction component.
 
-#### SAMPLE.....
 | Original Plan | Outcome | 
 | --- | :---: |  
-| Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated | 
+| Credit card component | We decided to remove the credit cards component and table because it made the app too complicated for the alloted time. Instead we will add a transaction component. | 
 
 ## Issues and Resolutions
 
