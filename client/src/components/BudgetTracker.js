@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import ReactMinimalPieChart from 'react-minimal-pie-chart';
 import NavDashboard from './NavDashboard';
+import { Link } from 'react-router-dom';
 
 class BudgetTracker extends Component {
     constructor(props) {
@@ -146,7 +147,11 @@ class BudgetTracker extends Component {
                 <h2>Budget Tracker Activity</h2>
                 <div>Current Month Balance: ${this.state.currentBalance} </div>
                 <div>Remaining Monthly Budget: ${remainingBudget} </div>
-                <div>Monthly Limit: ${user.limit} </div>
+
+                <div className="edit-budget"> Monthly Limit: ${user.limit} 
+                <button><Link className="edit-limit" to={`/dashboard/${this.state.user.id}/profile/edit`}> Edit </Link></button>
+                </div>
+
                 <br></br>
                 
                 <div className='piechart-legend'>

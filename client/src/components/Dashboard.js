@@ -127,8 +127,11 @@ class Dashboard extends Component {
                     user={this.state.user}
                 />
                 <div className="dashboard-summary">
+                    <div>Budget Limit: ${user.limit}</div>
+                    <br></br>
+
                     <div className='dashboard-info'>
-                        <p>Current Month balance: ${this.state.balance} (Limit: ${user.limit})</p>
+                        <p>Current Month balance: ${this.state.balance}</p>
                     </div>
                     <div className='dashboard-info'>
                         <p>Remaining Monthly Budget: ${user.limit - this.state.balance} </p>
@@ -186,3 +189,5 @@ class Dashboard extends Component {
 }
 
 export default Dashboard;
+
+

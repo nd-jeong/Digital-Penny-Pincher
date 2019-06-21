@@ -67,6 +67,7 @@
   right: 0;
   bottom: 0;
   flex-direction: column;
+  background-color: #5a3af6;
 }
 
 
@@ -94,15 +95,25 @@
 
 .keypad-buttons {
     transition-duration: 0.4s;
+    border: 1px solid white;
+
 }
 
 .keypad-buttons:hover {
-    color: white;
+    color: #85daef;
 }
 
 .dashboard-info {
     display: flex;
     flex-direction: row;
+    text-align: center;
+}
+
+
+.edit-limit {
+    margin: auto;
+    padding: 0px;
+    color: black;
 }
 
 /*.dashboard-summary {*/
@@ -126,10 +137,12 @@
      /*font-size: 80px; */
 
     font-size: 2em;
+    color: white;
     text-align: center;
     background-color: #84ecaf;
-    opacity: 0.4;
+    /* opacity: 0.4; */
     /*width: 300px;*/
+    border-radius: 30px;
 }
 
 .dashboard-container {
@@ -139,6 +152,9 @@
     left: 0;
     right: 0;
     bottom: 0;
+    font-family: 'Montserrat', sans-serif;    
+
+    
 }
 
 .dashboard-summary {
@@ -151,20 +167,23 @@
     width: 40%;
     align-items: center;
     color: white;
+    font-family: 'Montserrat', sans-serif;    
+
 }
 
 .keypad-num-container {
     margin: auto;
-    padding: 30px;
+    padding: 5px;
     white-space: nowrap;
     position: relative;
     font-family: 'Bungee Hairline', cursive;
     /* font-size: 80px; */
 
     font-size: 2em;
+    color: rgb(240, 239, 239);
     text-align: center;
     background-color: #84ecaf;
-    opacity: 0.4;
+    /* opacity: 0.4; */
 
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -195,7 +214,7 @@
 
 .read-out {
   grid-column: 1 / -1;
-  font-size: 1em;
+  font-size: 50px;
   line-height: 1.5;
   overflow: hidden;
   margin: auto;
