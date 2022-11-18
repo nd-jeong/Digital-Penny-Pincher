@@ -13,7 +13,7 @@
     "react-hamburger-menu": "^1.1.1",
     "react-minimal-pie-chart": "^4.2.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "sequelize": "^5.8.10"
   },
   "scripts": {
